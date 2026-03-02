@@ -1,0 +1,378 @@
+/* 29LT Bukra Font Import */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Pure Marketing Design System */
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+
+    /* Primary: #4938a1 converted to HSL */
+    --primary: 250 40% 43%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 250 40% 43%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 250 40% 43%;
+
+    --radius: 0.75rem;
+
+    /* Custom Design Tokens */
+    --pure-purple: 250 40% 43%;
+    --pure-purple-light: 250 40% 55%;
+    --pure-purple-dark: 250 40% 35%;
+    --pure-black: 0 0% 0%;
+    --pure-white: 0 0% 100%;
+    --pure-gray: 0 0% 45%;
+    --pure-gray-light: 0 0% 96%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(
+      135deg,
+      hsl(250 40% 43%) 0%,
+      hsl(250 40% 35%) 100%
+    );
+    --gradient-cta: linear-gradient(
+      135deg,
+      hsl(250 40% 50%) 0%,
+      hsl(250 40% 40%) 100%
+    );
+
+    /* Shadows */
+    --shadow-sm: 0 2px 8px -2px hsl(0 0% 0% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(0 0% 0% / 0.12);
+    --shadow-lg: 0 16px 48px -16px hsl(0 0% 0% / 0.15);
+    --shadow-purple: 0 8px 32px -8px hsl(250 40% 43% / 0.35);
+
+    /* Sidebar */
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 0 0% 20%;
+    --sidebar-primary: 250 40% 43%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 250 40% 95%;
+    --sidebar-accent-foreground: 250 40% 43%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 250 40% 43%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 98%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 250 40% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
+
+    --accent: 250 40% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 250 40% 55%;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 250 40% 55%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 250 40% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    /* 1. Webkit Browsers (Chrome, Edge, Safari) */
+    ::-webkit-scrollbar {
+      width: 11px; /* Width of the vertical scrollbar */
+      height: 10px; /* Height of the horizontal scrollbar */
+    }
+
+    ::-webkit-scrollbar-track {
+      background: hsl(var(--muted)); /* Light grey background */
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: hsl(
+        var(--primary) / 0.6
+      ); /* Brand purple with some transparency */
+      border-radius: 10px; /* Rounded corners */
+      border: 2px solid hsl(var(--muted)); /* Creates padding effect around the thumb */
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: hsl(var(--primary)); /* Full brand purple on hover */
+    }
+
+    /* 2. Firefox */
+    html {
+      /* "thumb color" "track color" */
+      scrollbar-color: hsl(var(--primary) / 0.6) hsl(var(--muted));
+      scrollbar-width: thin; /* Options: auto, thin, none */
+    }
+  }
+
+  html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* RTL Support */
+  [dir="rtl"] {
+    font-family: "Cairo", sans-serif;
+  }
+
+  [dir="ltr"] {
+    font-family: "Cairo", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-section {
+    @apply bg-primary text-primary-foreground;
+    background: var(--gradient-hero);
+  }
+
+  /* Stats Counter Animation */
+  .stat-number {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold text-primary;
+  }
+
+  /* Service Card */
+  .service-card {
+    @apply bg-card rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300;
+    box-shadow: var(--shadow-md);
+  }
+
+  .service-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+  }
+
+  /* Testimonial Card */
+  .testimonial-card {
+    @apply bg-card rounded-xl p-6 border border-border;
+    box-shadow: var(--shadow-sm);
+  }
+
+  /* CTA Button Styles */
+  .btn-hero {
+    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300;
+  }
+
+  .btn-hero-primary {
+    @apply btn-hero bg-white text-primary hover:bg-gray-100;
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-hero-primary:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .btn-hero-secondary {
+    @apply btn-hero bg-transparent border-2 border-white text-white hover:bg-white/10;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Container */
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* WhatsApp Button */
+  .whatsapp-float {
+    @apply fixed bottom-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  }
+
+  [dir="ltr"] .whatsapp-float {
+    @apply left-6;
+  }
+
+  [dir="rtl"] .whatsapp-float {
+    @apply right-6;
+  }
+
+  /* Scroll to Top Button */
+  .scroll-to-top-btn {
+    @apply fixed bottom-6 z-40 bg-primary text-primary-foreground p-3 rounded-full shadow-lg hover:bg-primary/90 cursor-pointer;
+    box-shadow: var(--shadow-purple);
+  }
+
+  [dir="ltr"] .scroll-to-top-btn {
+    right: 1.5rem;
+  }
+
+  [dir="rtl"] .scroll-to-top-btn {
+    left: 1.5rem;
+  }
+
+  /* Sticky Header Shadow */
+  .header-shadow {
+    box-shadow: 0 4px 20px -5px hsl(0 0% 0% / 0.1);
+  }
+
+  /* Partner Logo Carousel */
+  .partner-logo {
+    @apply h-12 md:h-16 w-auto opacity-60 hover:opacity-100 transition-opacity duration-300 grayscale hover:grayscale-0;
+  }
+
+  /* Form Styles */
+  .form-input {
+    @apply w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-foreground mb-2;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  /* Counter animation */
+  .counter-animate {
+    @apply tabular-nums;
+  }
+}
+
+/* Swiper custom styles */
+.portfolio-swiper .swiper-button-next,
+.portfolio-swiper .swiper-button-prev,
+.blog-swiper .swiper-button-next,
+.blog-swiper .swiper-button-prev {
+  color: hsl(var(--primary));
+  background: hsl(var(--background));
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.portfolio-swiper .swiper-button-next::after,
+.portfolio-swiper .swiper-button-prev::after,
+.blog-swiper .swiper-button-next::after,
+.blog-swiper .swiper-button-prev::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+[dir="rtl"] .swiper-button-next {
+  left: 10px;
+  right: auto;
+}
+
+[dir="rtl"] .swiper-button-prev {
+  right: 10px;
+  left: auto;
+}
+
+/* Hide swiper buttons on mobile */
+@media (max-width: 640px) {
+  .portfolio-swiper .swiper-button-next,
+  .portfolio-swiper .swiper-button-prev,
+  .blog-swiper .swiper-button-next,
+  .blog-swiper .swiper-button-prev {
+    display: none;
+  }
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://puremarketing.sa/ar</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketing.sa/ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketing.sa/en"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://puremarketing.sa/en</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketing.sa/ar"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketing.sa/en"/>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://puremarketing.sa/ar/services/social-media-management</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://puremarketing.sa/ar/services/paid-ads-campaigns</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://puremarketing.sa/ar/services/video-editing-motion-graphics</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://puremarketing.sa/ar/services/websites-ecommerce</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>

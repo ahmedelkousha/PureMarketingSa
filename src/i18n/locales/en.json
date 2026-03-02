@@ -1,0 +1,355 @@
+{
+  "common": {
+    "contactUs": "Contact Us",
+    "learnMore": "Learn More",
+    "bookConsultation": "Book Free Consultation",
+    "sendRequest": "Send Request",
+    "whatsapp": "WhatsApp",
+    "call": "Call",
+    "email": "Email",
+    "viewMore": "View More",
+    "services": "Services",
+    "about": "About Us",
+    "portfolio": "Our Work",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "blog": "Blog",
+    "contact": "Contact"
+  },
+  "hero": {
+    "badge": "Pure Marketing for Digital Marketing",
+    "title": "A complete ecosystem for all digital growth needs;",
+    "subTitle": "From digital strategies and smart campaigns, to building integrated stores and creative visual production.",
+    "cta": "Where quality meets innovation, to make the difference",
+    "contactNow": "Contact Us Now",
+    "bookConsultation": "Book Free Consultation"
+  },
+  "stats": {
+    "title": "Trust Across Borders and Achievements Speak in Numbers",
+    "subtitle": "Because we don't believe in promises, but in tangible results",
+    "countries": "Countries We Serve",
+    "clients": "Clients Trust Us",
+    "campaigns": "Successful Marketing Campaigns",
+    "designs": "Creative Designs & Videos",
+    "websites": "Websites & E-commerce Built"
+  },
+  "caseStudy": {
+    "title": "Behind the Scenes... Transforming Challenges into Record Successes",
+    "mainTitle": "How We Achieved 2,006 Actual Bookings in Just 3 Months?",
+    "client": "Client: Medical Center - Kingdom of Saudi Arabia",
+    "cta": "Discover the Success Story"
+  },
+  "about": {
+    "title": "About Pure Marketing",
+    "subtitle": "A Saudi company aiming to empower brands through smart strategies and innovative digital solutions.",
+    "description": "At Pure Marketing, we believe that every brand has a unique story to tell. Our mission is to help you tell that story in the most compelling way possible, reaching the right audience at the right time.",
+    "description2": "With years of experience in the Saudi and Gulf markets, we understand the local culture and consumer behavior, allowing us to create strategies that truly resonate with your target audience.",
+    "features": {
+      "mission": {
+        "title": "Our Mission",
+        "description": "Empowering brands to achieve digital dominance"
+      },
+      "team": {
+        "title": "Expert Team",
+        "description": "Skilled professionals with diverse expertise"
+      },
+      "excellence": {
+        "title": "Excellence",
+        "description": "Committed to delivering exceptional results"
+      },
+      "growth": {
+        "title": "Growth Focus",
+        "description": "Strategies designed for sustainable growth"
+      }
+    }
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "subtitle": "Don't just hear our story - see how we've brought our partners' brands to life with creative excellence.",
+    "viewAll": "View All Portfolio",
+    "items": {
+      "project1": {
+        "title": "Brand Social Presence",
+        "description": "Complete social media transformation for a retail brand"
+      },
+      "project2": {
+        "title": "Campaign Success",
+        "description": "High-ROI advertising campaign for healthcare sector"
+      },
+      "project3": {
+        "title": "Motion Graphics Showcase",
+        "description": "Cinematic brand video for product launch"
+      },
+      "project4": {
+        "title": "E-commerce Platform",
+        "description": "Full-featured online store with seamless UX"
+      }
+    }
+  },
+  "blogSection": {
+    "title": "Pure Blog",
+    "subtitle": "Stay updated with the latest digital marketing trends and insights from the Saudi market.",
+    "viewAll": "View All Articles",
+    "minRead": "min read",
+    "posts": {
+      "digital-marketing-trends-2025": {
+        "title": "Digital Marketing Trends 2025",
+        "excerpt": "Discover the top digital marketing trends shaping the Saudi market in 2025."
+      },
+      "social-media-strategy-guide": {
+        "title": "Social Media Strategy Guide",
+        "excerpt": "A comprehensive guide to building an effective social media strategy."
+      },
+      "ecommerce-success-tips": {
+        "title": "E-commerce Success Tips",
+        "excerpt": "Essential tips for building a successful e-commerce business in Saudi Arabia."
+      },
+      "paid-ads-optimization": {
+        "title": "Paid Ads Optimization",
+        "excerpt": "How to optimize your paid advertising campaigns for maximum ROI."
+      }
+    }
+  },
+  "services": {
+    "title": "Our Digital Solutions",
+    "subtitle": "Integrated services designed to empower your brand to dominate the market",
+    "socialMedia": {
+      "title": "Social Media Management",
+      "description": "Building a loyal community around your brand through strategic content that ensures continuous engagement.",
+      "slug": "social-media-management"
+    },
+    "paidAds": {
+      "title": "Paid Advertising Campaigns",
+      "description": "Smart campaigns on all platforms that guarantee you the highest return on ad spend (ROAS).",
+      "slug": "paid-ads-campaigns"
+    },
+    "motionGraphics": {
+      "title": "Video Editing & Motion Graphics",
+      "description": "Transforming your ideas into visual and cinematic stories that captivate attention and remain in memory.",
+      "slug": "video-editing-motion-graphics"
+    },
+    "websites": {
+      "title": "Websites & E-commerce",
+      "description": "Designing a smooth user experience that converts visitors into actual customers with a single click.",
+      "slug": "websites-ecommerce"
+    }
+  },
+  "whyUs": {
+    "title": "Why Choose Pure Marketing?",
+    "compass": {
+      "title": "Compass Methodology",
+      "description": "We don't move randomly; we chart your path based on precise market analysis."
+    },
+    "transparency": {
+      "title": "Absolute Transparency",
+      "description": "Real-time reports and clear budget management; you're a partner in every step."
+    },
+    "excellence": {
+      "title": "Technical Excellence",
+      "description": "We give your brand a visual identity that surpasses competitors."
+    }
+  },
+  "testimonials": {
+    "title": "Success Partners' Voices",
+    "subtitle": "Voices from the field... Our success is measured by our partners' satisfaction and their growth stories.",
+    "testimonial1": {
+      "name": "Abu Saud",
+      "role": "Retail Entrepreneur",
+      "text": "Honestly, I was hesitant at first about the e-commerce store and how to integrate it with Mada and shipping companies, but Pure Marketing took my idea and delivered a store that exceeded expectations."
+    },
+    "testimonial2": {
+      "name": "Sarah Al-Qahtani",
+      "role": "Fashion Designer",
+      "text": "My experience with Pure in brand identity design was exceptional. The kickoff meeting made things so much easier, and the logo turned out incredibly luxurious. Thank you!"
+    },
+    "testimonial3": {
+      "name": "Eng. Khalid Al-Shammari",
+      "role": "Marketing Director - Real Estate Company",
+      "text": "Our social media management needed a clear strategy, not just posting. Pure Marketing helped us with that, especially tracking results through Notion."
+    },
+    "testimonial4": {
+      "name": "Abdullah Al-Fahd",
+      "role": "Electronics Store Owner",
+      "text": "The website is incredibly fast and perfectly mobile-compatible. SEO started showing results from the first month. Truly professional technical competence."
+    },
+    "testimonial5": {
+      "name": "Faisal Al-Hakimi",
+      "role": "Restaurant Manager",
+      "text": "What I liked most about Pure is their trend tracking on social media. Here in Jeddah, trends change fast and the Pure team is always ready."
+    },
+    "testimonial6": {
+      "name": "Abu Abdulaziz",
+      "role": "Owner of Al-Rukn Al-Fakhir Brand",
+      "text": "I sat with the Pure team and honestly what caught my attention wasn't just their designs. It was their organization, commitment, and team expertise. God willing, this won't be our last collaboration."
+    }
+  },
+  "closing": {
+    "title": "Your Next Project Deserves to Be Exceptional",
+    "subtitle": "We're here to make the difference you aspire to.",
+    "licensed": "We work with clarity and reliability; Pure Marketing is an official Saudi company fully licensed in the Kingdom."
+  },
+  "contact": {
+    "title": "Service Request or Inquiry",
+    "name": "Full Name",
+    "phone": "Phone Number",
+    "preferredContact": "How do you prefer we contact you?",
+    "whatsapp": "WhatsApp",
+    "phoneCall": "Phone Call",
+    "details": "Request Details",
+    "detailsPlaceholder": "Tell us about your project...",
+    "selectService": "Select Service",
+    "submit": "Send Request",
+    "successTitle": "Request Received!",
+    "successMessage": "Thank you for reaching out. We've received your request and will get back to you shortly.",
+    "errorTitle": "Something went wrong",
+    "errorMessage": "Failed to send your request. Please try again later.",
+    "sending": "Sending..."
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "popularServices": "Popular Services",
+    "about": "About Pure",
+    "aboutPure": "About Pure",
+    "aboutText": "A Saudi company aiming to empower brands through smart strategies and innovative digital solutions.",
+    "blog": "Pure Blog",
+    "blogText": "Subscribe to receive the latest digital marketing trends in the Saudi market.",
+    "contactInfo": "Contact Info",
+    "copyright": "© 2025 Pure Marketing. All Rights Reserved.",
+    "pureProfile": "Pure Profile",
+    "purePortfolio": "Pure Portfolio"
+  },
+  "servicePages": {
+    "socialMedia": {
+      "title": "Social Media Management",
+      "heroSubtitle": "Building a loyal community around your brand through strategic content that ensures continuous engagement",
+      "description": "At Pure Marketing, we don't just manage your accounts; we create a 'personality' for your brand that speaks and interacts. We believe that social platforms are the bridge of trust between you and your audience; so we design comprehensive content strategies aimed at transforming silent followers into a loyal community that promotes your brand itself.",
+      "methodology": {
+        "title": "Our Methodology (How Do We Make the Difference?)",
+        "step1": {
+          "title": "Compass Analysis",
+          "description": "Precise study of your target audience and competitor analysis in the Saudi and Gulf market."
+        },
+        "step2": {
+          "title": "Strategy Design",
+          "description": "Defining the Tone of Voice and editorial line that suits your brand."
+        },
+        "step3": {
+          "title": "Creative Content Creation",
+          "description": "Writing content (Copywriting) and designs that keep up with trends and serve your goals."
+        },
+        "step4": {
+          "title": "Engagement & Community",
+          "description": "Managing comments and messages and building a strong relationship with the audience."
+        },
+        "step5": {
+          "title": "Purity Reports",
+          "description": "Providing you with transparent periodic reports measuring engagement and growth."
+        }
+      }
+    },
+    "paidAds": {
+      "title": "Paid Advertising Campaigns",
+      "heroSubtitle": "Smart campaigns on all platforms that guarantee you the highest return on ad spend (ROAS)",
+      "description": "We don't spend your budget, we invest it. We focus our campaigns on (Instagram, Snapchat, TikTok, and Google) to reach the quality customer ready to make a purchase decision. We use precise data to target the audience based on their purchasing behavior, ensuring the highest return on advertising spend (ROAS).",
+      "methodology": {
+        "title": "Our Methodology (Path to Results)",
+        "step1": {
+          "title": "Goal Setting",
+          "description": "Is the goal brand awareness, increased sales, or direct bookings?"
+        },
+        "step2": {
+          "title": "Campaign Structure",
+          "description": "Designing the customer journey (Funnel) and choosing the most suitable platforms for each goal."
+        },
+        "step3": {
+          "title": "Testing & Optimization (A/B Testing)",
+          "description": "Launching multiple ad models and monitoring performance moment by moment to choose the most successful."
+        },
+        "step4": {
+          "title": "Smart Budget Management",
+          "description": "Distributing the budget intelligently to reduce cost per click and increase conversions."
+        },
+        "step5": {
+          "title": "Absolute Transparency",
+          "description": "Direct access for the client to campaign results through a real-time dashboard."
+        }
+      }
+    },
+    "motionGraphics": {
+      "title": "Video Editing & Motion Graphics",
+      "heroSubtitle": "Transforming your ideas into visual and cinematic stories that captivate attention and remain in memory",
+      "description": "In the age of visual content, the first second is decisive. We provide cinematic excellence that transforms your complex message into an exciting video that takes your breath away. Whether it's an explanatory motion graphics video or cinematic editing for your ads, we guarantee you visual quality that gives your brand exceptional prestige.",
+      "methodology": {
+        "title": "Our Methodology (From Idea to Screen)",
+        "step1": {
+          "title": "Brainstorming & Script",
+          "description": "Writing a scenario that touches customer emotions and clarifies the added value."
+        },
+        "step2": {
+          "title": "Storyboard",
+          "description": "Visualizing scenes before starting implementation to ensure matching your vision."
+        },
+        "step3": {
+          "title": "Creative Execution",
+          "description": "Animating graphics or editing shots with the latest global technologies."
+        },
+        "step4": {
+          "title": "Sound Engineering",
+          "description": "Choosing music and voiceover appropriate for the brand identity."
+        },
+        "step5": {
+          "title": "Final Output",
+          "description": "Delivering a video ready for publishing in 4K quality suitable for all platforms."
+        }
+      }
+    },
+    "websites": {
+      "title": "Websites & E-commerce",
+      "heroSubtitle": "Designing a smooth user experience that converts visitors into actual customers with a single click",
+      "description": "Your store is your facade to the world, and we build it to be a selling machine that works non-stop. We don't just focus on aesthetic appearance, but we pay utmost attention to user experience (UI/UX) and browsing speed, ensuring a smooth purchasing journey that ends with pressing the 'Order Completed' button.",
+      "methodology": {
+        "title": "Our Methodology (Building the Foundations)",
+        "step1": {
+          "title": "Needs Analysis",
+          "description": "Understanding the type of products and the ideal customer journey within the site."
+        },
+        "step2": {
+          "title": "Structural Design",
+          "description": "Building a modern and attractive user interface (UI) consistent with visual identity."
+        },
+        "step3": {
+          "title": "Technical Integration",
+          "description": "Connecting the store with payment gateways (Mada, Apple Pay) and leading shipping companies."
+        },
+        "step4": {
+          "title": "Search Engine Optimization (SEO)",
+          "description": "Preparing the site to top search results and bring free visits."
+        },
+        "step5": {
+          "title": "Training & Support",
+          "description": "Delivering an easy control panel and training your team to manage orders and inventory."
+        }
+      }
+    }
+  },
+  "seo": {
+    "home": {
+      "title": "Pure Marketing | Digital Marketing Agency in Saudi Arabia",
+      "description": "Pure Marketing is your complete destination for digital dominance. Social media management, paid ads, motion graphics, and e-commerce solutions."
+    },
+    "services": {
+      "title": "Our Services | Pure Marketing",
+      "description": "Explore our comprehensive digital marketing services including social media management, paid advertising, motion graphics, and website development."
+    },
+    "contact": {
+      "title": "Contact Us | Pure Marketing",
+      "description": "Get in touch with Pure Marketing for your digital marketing needs. Book a free consultation today."
+    }
+  }
+}

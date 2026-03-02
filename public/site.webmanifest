@@ -1,0 +1,16 @@
+{
+  "name": "Pure Marketing",
+  "short_name": "Pure",
+  "description": "Digital Marketing Agency in Saudi Arabia",
+  "start_url": "/ar",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#4938a1",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}
