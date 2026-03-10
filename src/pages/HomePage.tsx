@@ -76,8 +76,8 @@ const HomePage = () => {
         <PortfolioSection />
         <WhyUsSection />
         <TestimonialsSection />
-        <BlogSection />
         <ContactSection />
+        <BlogSection />
       </main>
 
       <Footer />

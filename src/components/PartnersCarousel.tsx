@@ -26,41 +26,53 @@ const partners = [
 
 const PartnersCarousel = () => {
   return (
-    <section className="py-16 border-[0px] border-border">
+    <section className="py-16 border-[0px] border-border partners-swiper">
       <div className="container-custom">
-        <Swiper
-          modules={[Autoplay]}
-          spaceBetween={60}
-          slidesPerView={2}
-          loop={true}
-          speed={1700}
-          autoplay={{
-            delay: 0,
-            disableOnInteraction: false,
-          }}
-          
-          breakpoints={{
-            640: { slidesPerView: 3 },
-            768: { slidesPerView: 4 },
-            1024: { slidesPerView: 5 },
-            1280: { slidesPerView: 6 },
-          }}
-          className="partners-swiper"
-        >
-          {partners.map((partner) => (
-            <SwiperSlide key={partner.id}>
-              <div className="flex items-center justify-center h-24">
-                <div className="partner-logo-container flex items-center justify-center bg-white rounded-xl h-full px-8 py-6">
-                  <img 
-                    src={partner.logo} 
-                    alt={partner.name}
-                    className="h-20 scale-[2.6] w-auto object-cover transition-all duration-300"
-                  />
+        <div className="relative">
+          {/* Left fade shadow */}
+          <div className="absolute left-0 top-0 h-full w-32 z-10 pointer-events-none"
+            style={{ background: 'linear-gradient(to right, var(--background, white), transparent)' }}
+          />
+          {/* Right fade shadow */}
+          <div className="absolute right-0 top-0 h-full w-32 z-10 pointer-events-none"
+            style={{ background: 'linear-gradient(to left, var(--background, white), transparent)' }}
+          />
+
+          <Swiper
+            dir='rtl'
+            freeMode={true}
+            modules={[Autoplay]}
+            spaceBetween={60}
+            slidesPerView={2}
+            loop={true}
+            speed={1860}
+            autoplay={{
+              delay: 0,
+              disableOnInteraction: false,
+            }}
+            breakpoints={{
+              640: { slidesPerView: 3 },
+              768: { slidesPerView: 4 },
+              1024: { slidesPerView: 5 },
+              1280: { slidesPerView: 6 },
+            }}
+            className="partners-swiper"
+          >
+            {partners.map((partner) => (
+              <SwiperSlide key={partner.id}>
+                <div className="flex items-center justify-center h-24">
+                  <div className="partner-logo-container flex items-center justify-center bg-white rounded-xl h-full px-8 py-6">
+                    <img
+                      src={partner.logo}
+                      alt={partner.name}
+                      className="h-20 scale-[2.6] w-auto object-cover transition-all duration-300"
+                    />
+                  </div>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
       </div>
     </section>
   );

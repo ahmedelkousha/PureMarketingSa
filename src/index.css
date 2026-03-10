@@ -343,10 +343,13 @@
 .blog-swiper .swiper-button-prev {
   color: hsl(var(--primary));
   background: hsl(var(--background));
-  width: 44px;
-  height: 44px;
+  width:40px;
+  height: 40px;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  top: 50% !important;
+  transform: translate(0,-50%) !important;
+  padding: 7px;
 }
 
 .portfolio-swiper .swiper-button-next::after,
@@ -365,6 +368,12 @@
 [dir="rtl"] .swiper-button-prev {
   right: 10px;
   left: auto;
+}
+
+.partners-swiper .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
 }
 
 /* Hide swiper buttons on mobile */

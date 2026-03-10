@@ -24,6 +24,7 @@ const Header = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const lastScrollY = useRef(0);
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,6 +77,31 @@ const Header = () => {
       document.documentElement.style.overflow = "";
     };
   }, [isMenuOpen]);
+
+  // Close dropdown on scroll
+  useEffect(() => {
+    const handleScrollClose = () => {
+      if (isServicesOpen) setIsServicesOpen(false);
+    };
+    window.addEventListener("scroll", handleScrollClose, { passive: true });
+    return () => window.removeEventListener("scroll", handleScrollClose);
+  }, [isServicesOpen]);
+
+  // Close dropdown on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        servicesDropdownRef.current &&
+        !servicesDropdownRef.current.contains(e.target as Node)
+      ) {
+        setIsServicesOpen(false);
+      }
+    };
+    if (isServicesOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [isServicesOpen]);
 
   const navItems = [
     { key: "home", path: `/${language}`, hash: "" },
@@ -141,30 +167,6 @@ const Header = () => {
     setLanguage(language === "ar" ? "en" : "ar");
   };
 
-  // Hamburger menu animation variants
-  const menuVariants = {
-    closed: {
-      opacity: 0,
-      height: 0,
-    },
-    open: {
-      opacity: 1,
-      height: "auto",
-    },
-  };
-
-  const menuItemVariants = {
-    closed: { opacity: 0, x: isRTL ? 20 : -20 },
-    open: (i: number) => ({
-      opacity: 1,
-      x: 0,
-      transition: {
-        delay: i * 0.1,
-        duration: 0.3,
-      },
-    }),
-  };
-
   return (
     <>
       <header
@@ -186,14 +188,17 @@ const Header = () => {
               <img
                 src={resolvedTheme === "dark" ? logoDark : logo}
                 alt="Pure Marketing"
-                className="h-10 w-auto"
+                className="h-12 w-auto"
               />
             </Link>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
               {navItems.map((item) => (
-                <div key={item.key} className="relative group">
+                <div
+                  key={item.key}
+                  className="relative group"
+                  ref={item.hasDropdown ? servicesDropdownRef : undefined}>
                   {item.hasDropdown ? (
                     <div className="flex items-center gap-1 cursor-pointer py-2">
                       <button
@@ -419,7 +424,7 @@ const Header = () => {
                           path: `/${language}`,
                           hash: "#contact",
                         },
-                        true
+                        true,
                       );
                     }}>
                     {t("common.contactUs")}
@@ -444,6 +449,6 @@ const Header = () => {
       />
     </>
   );
-};
+};;
 
 export default Header;

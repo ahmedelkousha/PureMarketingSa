@@ -2,158 +2,291 @@
 
 export const caseStudyContent = {
   ar: {
-    pageTitle: 'دراسة حالة | بيور ماركتنج',
-    pageDescription: 'اكتشف كيف حققنا 2,006 حجز فعلي خلال 3 أشهر فقط لمركز طبي في السعودية',
-    badge: 'دراسة حالة',
-    title: 'تحقيق 2,006 حجز فعلي خلال 3 أشهر',
-    client: 'مركز طبي – المملكة العربية السعودية',
+    pageTitle: "دراسة حالة | بيور ماركتنج",
+    pageDescription:
+      "اكتشف كيف حققنا 2,006 حجز فعلي خلال 3 أشهر فقط لمركز طبي في السعودية",
+    badge: "دراسة حالة",
+    title: "تحقيق 2,006 حجز فعلي خلال 3 أشهر",
+    client: "مركز طبي – المملكة العربية السعودية",
     stats: [
-      { value: '2,006', label: 'حجز فعلي' },
-      { value: '3', label: 'أشهر فقط' },
-      { value: '150K+', label: 'وصول' },
-      { value: '4.2x', label: 'عائد الاستثمار' },
+      { value: "2,006", label: "حجز فعلي" },
+      { value: "3", label: "أشهر فقط" },
+      { value: "150K+", label: "وصول" },
+      { value: "4.2x", label: "عائد الاستثمار" },
     ],
     sections: [
       {
-        title: 'نبذة عن العميل',
-        content: 'مركز طبي في المملكة العربية السعودية يضم 3 فروع، ويقدّم مجموعة متكاملة من الخدمات الطبية، تشمل علاجات الليزر، طب الأسنان، الإجراءات الجراحية، وخدمات طبية متخصصة أخرى.',
+        title: "نبذة عن العميل",
+        content:
+          "مركز طبي في المملكة العربية السعودية يضم 3 فروع، ويقدّم مجموعة متكاملة من الخدمات الطبية، تشمل علاجات الليزر، طب الأسنان، الإجراءات الجراحية، وخدمات طبية متخصصة أخرى.",
       },
       {
-        title: 'الوضع قبل العمل',
-        content: 'كان المركز يستثمر ميزانيات إعلانية مرتفعة دون تحقيق عائد واضح، بسبب غياب التخطيط الاستراتيجي، وضعف الاعتماد على البيانات، وعدم وجود تنسيق فعّال بين التسويق وخدمة العملاء.',
+        title: "الوضع قبل العمل",
+        content:
+          "كان المركز يستثمر ميزانيات إعلانية مرتفعة دون تحقيق عائد واضح، بسبب غياب التخطيط الاستراتيجي، وضعف الاعتماد على البيانات، وعدم وجود تنسيق فعّال بين التسويق وخدمة العملاء.",
       },
     ],
-    challengesTitle: 'التحديات الرئيسية',
+    challengesTitle: "التحديات الرئيسية",
     challenges: [
-      { title: 'حملات إعلانية غير منظمة', description: 'إطلاق الإعلانات دون استراتيجية واضحة، أو تقسيم دقيق للخدمات، أو تحديد أهداف تحويل قابلة للقياس.' },
-      { title: 'تأخر الرد على العملاء المحتملين', description: 'تأخر الردود على الاستفسارات حتى 48 ساعة، مما أدى إلى فقدان عدد كبير من الفرص البيعية.' },
-      { title: 'محتوى إعلاني غير فعّال', description: 'ضعف الرسائل التسويقية، وعدم وجود اتجاه إبداعي أو جودة إنتاج مناسبة.' },
-      { title: 'غياب التتبع والتحليل', description: 'عدم تفعيل أنظمة التتبع والتحليلات، مما صعّب قياس الأداء وتحسين الحملات.' },
-      { title: 'تكلفة مرتفعة مقابل عائد ضعيف', description: 'إنفاق إعلاني غير مُجدٍ دون نتائج قابلة للتوسع أو التحسين.' },
+      {
+        title: "حملات إعلانية غير منظمة",
+        description:
+          "إطلاق الإعلانات دون استراتيجية واضحة، أو تقسيم دقيق للخدمات، أو تحديد أهداف تحويل قابلة للقياس.",
+      },
+      {
+        title: "تأخر الرد على العملاء المحتملين",
+        description:
+          "تأخر الردود على الاستفسارات حتى 48 ساعة، مما أدى إلى فقدان عدد كبير من الفرص البيعية.",
+      },
+      {
+        title: "محتوى إعلاني غير فعّال",
+        description:
+          "ضعف الرسائل التسويقية، وعدم وجود اتجاه إبداعي أو جودة إنتاج مناسبة.",
+      },
+      {
+        title: "غياب التتبع والتحليل",
+        description:
+          "عدم تفعيل أنظمة التتبع والتحليلات، مما صعّب قياس الأداء وتحسين الحملات.",
+      },
+      {
+        title: "تكلفة مرتفعة مقابل عائد ضعيف",
+        description:
+          "إنفاق إعلاني غير مُجدٍ دون نتائج قابلة للتوسع أو التحسين.",
+      },
     ],
-    strategyTitle: 'الاستراتيجية والتنفيذ',
-    strategyIntro: 'بعد إجراء مراجعة شاملة لحسابات الإعلانات، تم بناء وتنفيذ استراتيجية تسويقية قائمة على الأداء والبيانات.',
+    strategyTitle: "الاستراتيجية والتنفيذ",
+    strategyIntro:
+      "بعد إجراء مراجعة شاملة لحسابات الإعلانات، تم بناء وتنفيذ استراتيجية تسويقية قائمة على الأداء والبيانات.",
     strategyBlocks: [
       {
-        title: 'تقسيم الخدمات',
-        content: 'تم فصل كل خدمة طبية وتحديد:',
-        items: ['الرسائل المناسبة لها', 'القنوات الإعلانية الأنسب', 'طريقة الاستهداف الأمثل لكل فئة'],
+        title: "تقسيم الخدمات",
+        content: "تم فصل كل خدمة طبية وتحديد:",
+        items: [
+          "الرسائل المناسبة لها",
+          "القنوات الإعلانية الأنسب",
+          "طريقة الاستهداف الأمثل لكل فئة",
+        ],
       },
       {
-        title: 'إطار النمو واكتساب العملاء',
-        items: ['حملات استهداف جمهور جديد (Cold Audiences)', 'حملات إعادة الاستهداف (Retargeting)', 'حملات الجمهور المشابه (Lookalike Audiences) لزيادة التوسع بجودة أعلى'],
+        title: "إطار النمو واكتساب العملاء",
+        items: [
+          "حملات استهداف جمهور جديد (Cold Audiences)",
+          "حملات إعادة الاستهداف (Retargeting)",
+          "حملات الجمهور المشابه (Lookalike Audiences) لزيادة التوسع بجودة أعلى",
+        ],
       },
       {
-        title: 'تحسين العمليات الداخلية',
-        subtitle: 'من بطء الاستجابة إلى تفاعل فوري',
-        content: 'تم عقد اجتماعات مع الإدارة لتوضيح التأثير المباشر لتأخر الردود على الإيرادات. وبناءً على ذلك:',
-        items: ['تنفيذ برامج تدريب لفريق خدمة العملاء', 'توحيد آلية الرد والمتابعة', 'تحسين سرعة وجودة التواصل مع العملاء المحتملين'],
+        title: "تحسين العمليات الداخلية",
+        subtitle: "من بطء الاستجابة إلى تفاعل فوري",
+        content:
+          "تم عقد اجتماعات مع الإدارة لتوضيح التأثير المباشر لتأخر الردود على الإيرادات. وبناءً على ذلك:",
+        items: [
+          "تنفيذ برامج تدريب لفريق خدمة العملاء",
+          "توحيد آلية الرد والمتابعة",
+          "تحسين سرعة وجودة التواصل مع العملاء المحتملين",
+        ],
       },
       {
-        title: 'تطوير المحتوى والإبداع',
-        items: ['وضع إطار واضح للرسائل الإعلانية', 'تقديم أفكار محتوى منظمة لكل خدمة', 'معالجة المشكلات التقنية المتعلقة بجودة الصوت والإنتاج', 'ضمان اتساق المحتوى عبر جميع المنصات'],
+        title: "تطوير المحتوى والإبداع",
+        items: [
+          "وضع إطار واضح للرسائل الإعلانية",
+          "تقديم أفكار محتوى منظمة لكل خدمة",
+          "معالجة المشكلات التقنية المتعلقة بجودة الصوت والإنتاج",
+          "ضمان اتساق المحتوى عبر جميع المنصات",
+        ],
       },
     ],
-    channelsTitle: 'استراتيجية القنوات الإعلانية',
-    channelsIntro: 'تم استخدام كل منصة وفق دورها داخل مسار العميل:',
+    channelsTitle: "استراتيجية القنوات الإعلانية",
+    channelsIntro: "تم استخدام كل منصة وفق دورها داخل مسار العميل:",
     channels: [
-      { name: 'إعلانات جوجل', details: ['حملات البحث لاستهداف الطلب الفعلي', 'حملات Performance Max لإعادة الاستهداف والتوسع'] },
-      { name: 'Meta (فيسبوك وإنستجرام)' },
-      { name: 'Snapchat' },
-      { name: 'TikTok', details: ['لاستخدامها في توليد العملاء المحتملين وبناء الوعي بالعلامة التجارية'] },
+      {
+        name: "إعلانات جوجل",
+        details: [
+          "حملات البحث لاستهداف الطلب الفعلي",
+          "حملات Performance Max لإعادة الاستهداف والتوسع",
+        ],
+      },
+      {
+        name: "Meta (فيسبوك وإنستجرام)",
+        details: [
+          "حملات الوعي والتفاعل لاستهداف الجماهير المتشابهة",
+          "إعادة استهداف الزوار بإعلانات ديناميكية لزيادة التحويلات",
+        ],
+      },
+      {
+        name: "Snapchat",
+        details: [
+          "استهداف الفئات الشبابية بإعلانات قصصية جذابة",
+          "حملات تثبيت التطبيق وتوليد العملاء المحتملين",
+        ],
+      },
+      {
+        name: "TikTok",
+        details: [
+          "لاستخدامها في توليد العملاء المحتملين وبناء الوعي بالعلامة التجارية",
+        ],
+      },
     ],
-    resultsTitle: 'النتائج والأثر التجاري',
+    resultsTitle: "النتائج والأثر التجاري",
     results: [
-      'تحقيق 2,006 حجز مؤكد خلال 3 أشهر فقط',
-      'الأداء القوي أدى إلى شراكة طويلة المدى مستمرة لأكثر من عام',
+      "تحقيق 2,006 حجز مؤكد خلال 3 أشهر فقط",
+      "الأداء القوي أدى إلى شراكة طويلة المدى مستمرة لأكثر من عام",
     ],
     resultsFinancial: {
-      period: 'خلال فترة 12 شهرًا:',
-      adSpend: 'الإنفاق الإعلاني: 720,000 ريال سعودي',
-      revenue: 'العائد المحقق: أكثر من 5,000,000 ريال سعودي',
-      platforms: 'منصة سناب شات — منصة تيك توك — جوجل — ميتا',
+      period: "خلال فترة 12 شهرًا:",
+      adSpend: "الإنفاق الإعلاني: 720,000 ريال سعودي",
+      revenue: "العائد المحقق: أكثر من 5,000,000 ريال سعودي",
+      platforms: "منصة سناب شات — منصة تيك توك — جوجل — ميتا",
     },
-    conclusionTitle: 'الخلاصة',
-    conclusion: 'من خلال إعادة هيكلة الاستراتيجية الإعلانية، وتحسين العمليات الداخلية، وربط التسويق بخدمة العملاء، انتقل المركز الطبي من إنفاق غير فعّال إلى نموذج نمو مستدام قائم على الأداء والبيانات، مع نتائج واضحة وقابلة للتوسع.',
-    ctaTitle: 'هل أنت مستعد لاتخاذ الخطوة التالية؟',
-    ctaDescription: 'احصل على استشارة تسويقية مجانية لمتجرك الإلكتروني واكتشف فرص النمو مع نتائج قابلة للقياس.',
+    conclusionTitle: "الخلاصة",
+    conclusion:
+      "من خلال إعادة هيكلة الاستراتيجية الإعلانية، وتحسين العمليات الداخلية، وربط التسويق بخدمة العملاء، انتقل المركز الطبي من إنفاق غير فعّال إلى نموذج نمو مستدام قائم على الأداء والبيانات، مع نتائج واضحة وقابلة للتوسع.",
+    ctaTitle: "هل أنت مستعد لاتخاذ الخطوة التالية؟",
+    ctaDescription:
+      "احصل على استشارة تسويقية مجانية لمتجرك الإلكتروني واكتشف فرص النمو مع نتائج قابلة للقياس.",
   },
   en: {
-    pageTitle: 'Case Study | Pure Marketing',
-    pageDescription: 'Discover how we achieved 2,006 actual bookings in just 3 months for a medical center in Saudi Arabia',
-    badge: 'Case Study',
-    title: 'Achieving 2,006 Actual Bookings in 3 Months',
-    client: 'Medical Center – Kingdom of Saudi Arabia',
+    pageTitle: "Case Study | Pure Marketing",
+    pageDescription:
+      "Discover how we achieved 2,006 actual bookings in just 3 months for a medical center in Saudi Arabia",
+    badge: "Case Study",
+    title: "Achieving 2,006 Actual Bookings in 3 Months",
+    client: "Medical Center – Kingdom of Saudi Arabia",
     stats: [
-      { value: '2,006', label: 'Actual Bookings' },
-      { value: '3', label: 'Months Only' },
-      { value: '150K+', label: 'Reach' },
-      { value: '4.2x', label: 'ROI' },
+      { value: "2,006", label: "Actual Bookings" },
+      { value: "3", label: "Months Only" },
+      { value: "150K+", label: "Reach" },
+      { value: "4.2x", label: "ROI" },
     ],
     sections: [
       {
-        title: 'About the Client',
-        content: 'A medical center in Saudi Arabia with 3 branches, offering a comprehensive range of medical services including laser treatments, dentistry, surgical procedures, and other specialized medical services.',
+        title: "About the Client",
+        content:
+          "A medical center in Saudi Arabia with 3 branches, offering a comprehensive range of medical services including laser treatments, dentistry, surgical procedures, and other specialized medical services.",
       },
       {
-        title: 'The Situation Before',
-        content: 'The center was investing high advertising budgets without achieving clear returns, due to the absence of strategic planning, weak reliance on data, and lack of effective coordination between marketing and customer service.',
+        title: "The Situation Before",
+        content:
+          "The center was investing high advertising budgets without achieving clear returns, due to the absence of strategic planning, weak reliance on data, and lack of effective coordination between marketing and customer service.",
       },
     ],
-    challengesTitle: 'Key Challenges',
+    challengesTitle: "Key Challenges",
     challenges: [
-      { title: 'Unorganized Ad Campaigns', description: 'Launching ads without a clear strategy, precise service segmentation, or measurable conversion goals.' },
-      { title: 'Delayed Response to Leads', description: 'Response delays to inquiries of up to 48 hours, leading to significant loss of sales opportunities.' },
-      { title: 'Ineffective Ad Content', description: 'Weak marketing messages, with no creative direction or appropriate production quality.' },
-      { title: 'Lack of Tracking & Analytics', description: 'Tracking and analytics systems were not activated, making it difficult to measure performance and optimize campaigns.' },
-      { title: 'High Cost vs. Low Returns', description: 'Inefficient ad spending without scalable or improvable results.' },
+      {
+        title: "Unorganized Ad Campaigns",
+        description:
+          "Launching ads without a clear strategy, precise service segmentation, or measurable conversion goals.",
+      },
+      {
+        title: "Delayed Response to Leads",
+        description:
+          "Response delays to inquiries of up to 48 hours, leading to significant loss of sales opportunities.",
+      },
+      {
+        title: "Ineffective Ad Content",
+        description:
+          "Weak marketing messages, with no creative direction or appropriate production quality.",
+      },
+      {
+        title: "Lack of Tracking & Analytics",
+        description:
+          "Tracking and analytics systems were not activated, making it difficult to measure performance and optimize campaigns.",
+      },
+      {
+        title: "High Cost vs. Low Returns",
+        description:
+          "Inefficient ad spending without scalable or improvable results.",
+      },
     ],
-    strategyTitle: 'Strategy & Execution',
-    strategyIntro: 'After conducting a comprehensive review of advertising accounts, a performance and data-driven marketing strategy was built and executed.',
+    strategyTitle: "Strategy & Execution",
+    strategyIntro:
+      "After conducting a comprehensive review of advertising accounts, a performance and data-driven marketing strategy was built and executed.",
     strategyBlocks: [
       {
-        title: 'Service Segmentation',
-        content: 'Each medical service was separated and defined by:',
-        items: ['Appropriate messaging', 'Most suitable advertising channels', 'Optimal targeting method for each category'],
+        title: "Service Segmentation",
+        content: "Each medical service was separated and defined by:",
+        items: [
+          "Appropriate messaging",
+          "Most suitable advertising channels",
+          "Optimal targeting method for each category",
+        ],
       },
       {
-        title: 'Growth & Customer Acquisition Framework',
-        items: ['Cold Audience targeting campaigns', 'Retargeting campaigns', 'Lookalike Audience campaigns for higher quality expansion'],
+        title: "Growth & Customer Acquisition Framework",
+        items: [
+          "Cold Audience targeting campaigns",
+          "Retargeting campaigns",
+          "Lookalike Audience campaigns for higher quality expansion",
+        ],
       },
       {
-        title: 'Internal Operations Improvement',
-        subtitle: 'From slow response to instant interaction',
-        content: 'Meetings were held with management to clarify the direct impact of delayed responses on revenue. Based on this:',
-        items: ['Customer service team training programs', 'Standardized response and follow-up procedures', 'Improved speed and quality of communication with potential customers'],
+        title: "Internal Operations Improvement",
+        subtitle: "From slow response to instant interaction",
+        content:
+          "Meetings were held with management to clarify the direct impact of delayed responses on revenue. Based on this:",
+        items: [
+          "Customer service team training programs",
+          "Standardized response and follow-up procedures",
+          "Improved speed and quality of communication with potential customers",
+        ],
       },
       {
-        title: 'Content & Creative Development',
-        items: ['Clear framework for advertising messages', 'Organized content ideas for each service', 'Addressed technical issues related to audio and production quality', 'Ensured content consistency across all platforms'],
+        title: "Content & Creative Development",
+        items: [
+          "Clear framework for advertising messages",
+          "Organized content ideas for each service",
+          "Addressed technical issues related to audio and production quality",
+          "Ensured content consistency across all platforms",
+        ],
       },
     ],
-    channelsTitle: 'Advertising Channel Strategy',
-    channelsIntro: 'Each platform was used according to its role within the customer journey:',
+    channelsTitle: "Advertising Channel Strategy",
+    channelsIntro:
+      "Each platform was used according to its role within the customer journey:",
     channels: [
-      { name: 'Google Ads', details: ['Search campaigns to target actual demand', 'Performance Max campaigns for retargeting and expansion'] },
-      { name: 'Meta (Facebook & Instagram)' },
-      { name: 'Snapchat' },
-      { name: 'TikTok', details: ['Used for lead generation and brand awareness building'] },
+  {
+    name: "Google Ads",
+    details: [
+      "Search campaigns to target actual demand",
+      "Performance Max campaigns for retargeting and expansion",
     ],
-    resultsTitle: 'Results & Business Impact',
+  },
+  {
+    name: "Meta (Facebook & Instagram)",
+    details: [
+      "Awareness and engagement campaigns targeting lookalike audiences",
+      "Dynamic retargeting ads for website visitors to boost conversions",
+    ],
+  },
+  {
+    name: "Snapchat",
+    details: [
+      "Targeting younger demographics with engaging Story ads",
+      "App install and lead generation campaigns",
+    ],
+  },
+  {
+    name: "TikTok",
+    details: ["Used for lead generation and brand awareness building"],
+  },
+],
+    resultsTitle: "Results & Business Impact",
     results: [
-      '2,006 confirmed bookings achieved in just 3 months',
-      'Strong performance led to a long-term partnership ongoing for over a year',
+      "2,006 confirmed bookings achieved in just 3 months",
+      "Strong performance led to a long-term partnership ongoing for over a year",
     ],
     resultsFinancial: {
-      period: 'Over a 12-month period:',
-      adSpend: 'Ad Spend: 720,000 SAR',
-      revenue: 'Revenue Generated: Over 5,000,000 SAR',
-      platforms: 'Snapchat — TikTok — Google — Meta',
+      period: "Over a 12-month period:",
+      adSpend: "Ad Spend: 720,000 SAR",
+      revenue: "Revenue Generated: Over 5,000,000 SAR",
+      platforms: "Snapchat — TikTok — Google — Meta",
     },
-    conclusionTitle: 'Conclusion',
-    conclusion: 'By restructuring the advertising strategy, improving internal operations, and linking marketing with customer service, the medical center transitioned from inefficient spending to a sustainable, performance and data-driven growth model with clear and scalable results.',
-    ctaTitle: 'Ready to Take the Next Step?',
-    ctaDescription: 'Get a free marketing consultation for your business and discover growth opportunities with measurable results.',
+    conclusionTitle: "Conclusion",
+    conclusion:
+      "By restructuring the advertising strategy, improving internal operations, and linking marketing with customer service, the medical center transitioned from inefficient spending to a sustainable, performance and data-driven growth model with clear and scalable results.",
+    ctaTitle: "Ready to Take the Next Step?",
+    ctaDescription:
+      "Get a free marketing consultation for your business and discover growth opportunities with measurable results.",
   },
 };
 

@@ -51,7 +51,7 @@ const TestimonialsSection = () => {
               768: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
-            className="testimonials-swiper pb-12"
+            className="testimonials-swiper !pb-10"
           >
             {testimonials.map((testimonial) => (
               <SwiperSlide key={testimonial}>
