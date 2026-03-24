@@ -4,8 +4,6 @@ import { useLanguage } from '@/contexts/LanguageContext';
 import { motion,AnimatePresence } from 'framer-motion';
 import { ArrowRight, ArrowLeft,X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Navigation } from 'swiper/modules';
 import { ImageCarousel } from '@/pages/ServicePage';
 
 import 'swiper/css';
@@ -18,10 +16,11 @@ import smm3 from "@/assets/smm-service/smm3.png";
 import smm4 from "@/assets/smm-service/smm4.png";
 import smm5 from "@/assets/smm-service/smm5.png";
 
-import ecommerce1 from "@/assets/website-ecommerce/ecommerce1.png";
-import ecommerce2 from "@/assets/website-ecommerce/ecommerce2.png";
-import ecommerce3 from "@/assets/website-ecommerce/ecommerce3.png";
-import ecommerce4 from "@/assets/website-ecommerce/ecommerce4.png";
+// Paid Ads Campaigns gallery (n images)
+import ads1 from "@/assets/ads-service/ads1.png";
+import ads2 from "@/assets/ads-service/ads2.png";
+import ads3 from "@/assets/ads-service/ads3.png";
+import ads4 from "@/assets/ads-service/ads4.png";
 import { useState } from 'react';
   
 const galleries: Record<
@@ -35,11 +34,11 @@ const galleries: Record<
     { id: 4, image: smm4, title: "Social Media 4" },
     { id: 5, image: smm5, title: "Social Media 5" },
   ],
-  ecommerce: [
-    { id: 1, image: ecommerce1, title: "Website 1" },
-    { id: 2, image: ecommerce2, title: "Website 2" },
-    { id: 3, image: ecommerce3, title: "Website 3" },
-    { id: 4, image: ecommerce4, title: "Website 4" },
+  paidAdsCampaigns: [
+    { id: 1, image: ads1, title: "Ads Campaign 1" },
+    { id: 2, image: ads2, title: "Ads Campaign 2" },
+    { id: 3, image: ads3, title: "Ads Campaign 3" },
+    { id: 4, image: ads4, title: "Ads Campaign 4" },
   ],
 };
 
@@ -64,7 +63,7 @@ const PortfolioSection = () => {
   return (
     <section
       id="portfolio"
-      className="section-padding bg-muted/30 overflow-hidden">
+      className="hero-section section-padding overflow-hidden">
       <div className="container-custom">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -75,7 +74,7 @@ const PortfolioSection = () => {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             {t("portfolio.title")}
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-primary-foreground max-w-3xl mx-auto">
             {t("portfolio.subtitle")}
           </p>
         </motion.div>
@@ -86,8 +85,16 @@ const PortfolioSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
           className="mb-12">
-          <ImageCarousel items={galleries.socialMedia} isRTL={isRTL} onOpen={openLightbox} />
-          <ImageCarousel items={galleries.ecommerce} isRTL={isRTL} onOpen={openLightbox} />
+          <ImageCarousel
+            items={galleries.socialMedia}
+            isRTL={isRTL}
+            onOpen={openLightbox}
+          />
+          <ImageCarousel
+            items={galleries.paidAdsCampaigns}
+            isRTL={isRTL}
+            onOpen={openLightbox}
+          />
         </motion.div>
 
         <motion.div
@@ -96,7 +103,7 @@ const PortfolioSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center">
-          <Button asChild size="lg" variant="outline" className="gap-2">
+          <Button asChild size="lg" variant="secondary" className="gap-2">
             <Link to={`/${language}/portfolio`}>
               {t("portfolio.viewAll")}
               <ArrowIcon className="w-4 h-4" />

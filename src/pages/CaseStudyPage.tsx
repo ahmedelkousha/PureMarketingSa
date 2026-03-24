@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useTranslation } from "react-i18next";
 import { Helmet } from "react-helmet-async";
@@ -57,6 +57,7 @@ const CaseStudyPage = () => {
       <Helmet>
         <title>{content.pageTitle}</title>
         <meta name="description" content={content.pageDescription} />
+        <html lang={language} dir={isRTL ? 'rtl' : 'ltr'} />
       </Helmet>
 
       <Header />

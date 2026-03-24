@@ -305,7 +305,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'digital-marketing-trends-2025',
     image: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=800&h=500&fit=crop',
     readTime: 5,
-    date: '2025-01-05',
+    date: '2026-01-05',
     title: {
       ar: 'كيف تنجح في تسويق مشروعك بالخليج عام 2026؟',
       en: 'How to Succeed in Marketing Your Business in the Gulf in 2026?',

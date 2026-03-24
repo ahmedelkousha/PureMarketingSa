@@ -19,11 +19,18 @@ const getInitialLanguageFromURL = (): string => {
   return 'ar'; // default to Arabic
 };
 
+const initialLang = getInitialLanguageFromURL();
+
+if (typeof document !== "undefined") {
+  document.documentElement.dir = initialLang === "ar" ? "rtl" : "ltr";
+  document.documentElement.lang = initialLang;
+}
+
 i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: getInitialLanguageFromURL(),
+    lng: initialLang,
     fallbackLng: 'ar',
     interpolation: {
       escapeValue: false,

@@ -25,17 +25,17 @@ const HeroSection = () => {
         className="absolute inset-0 w-full h-full object-cover md:hidden"
       />
 
-      <div className={`container-custom w-full h-full relative z-10 py-10 lg:py-32 ${isRTL ? 'lg:mr-[10%]' : 'lg:mr-[2%]'}`}>
-        <div className="flex flex-col h-full gap-8 justify-between lg:gap-12 items-center lg:items-start lg:max-w-[42rem] lg:ml-auto">
+      <div className={`w-full h-full relative z-10 py-10 lg:py-32 px-4 `}>
+        <div className="flex flex-col h-full gap-8 justify-center lg:gap-12 items-center lg:max-w-[60rem] lg:mx-auto">
           {/* Text Content */}
 
-          <div className={`text-center md:text-start lg:text-start flex flex-col justify-between md:justify-center md:gap-6 m-auto h-full`}>
+          <div className={`text-center flex flex-col md:gap-6 m-auto h-full`}>
             <div>
               <motion.p
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="text-base md:text-lg text-white/80 mb-4">
+                className="text-[0.9rem] md:text-lg font-bold text-white/80 mb-4">
                 {t("hero.badge")}
               </motion.p>
 
@@ -43,14 +43,14 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-[1.8rem] md:text-4xl lg:text-[2.1rem] font-extrabold leading-tight mb-6 text-white whitespace-pre-line">
+                className="text-[1.2rem] md:text-4xl lg:text-5xl font-semibold lg:font-bold leading-[2rem] lg:leading-[4rem] text-white whitespace-pre-line">
                 {t("hero.title")}
               </motion.h1>
               <motion.h2
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-[1.1rem] md:text-2xl lg:text-[1.7rem] font-normal leading-tight mb-6 text-white whitespace-pre-line">
+                className="text-[1.1rem] font-semibold lg:font-bold leading-[2rem] lg:leading-[4rem] md:text-2xl lg:text-5xl mb-6 text-white whitespace-pre-line">
                 {t("hero.subTitle")}
               </motion.h2>
 
@@ -58,7 +58,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="text-base md:text-lg text-white/80 mb-10">
+                className="text-[1rem] md:text-lg lg:text-4xl text-white/80 mb-6">
                 {t("hero.cta")}
               </motion.p>
             </div>
@@ -68,7 +68,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className={`flex flex-col sm:flex-row gap-4 md:justify-start justify-center lg:justify-start`}>
+                className={`flex flex-row sm:flex-row gap-4 justify-center`}>
                 <a
                   href="https://api.whatsapp.com/send?phone=9660569522042"
                   target="_blank"
@@ -83,7 +83,6 @@ const HeroSection = () => {
                 </Link>
               </motion.div>
             </div>
-
           </div>
         </div>
       </div>
