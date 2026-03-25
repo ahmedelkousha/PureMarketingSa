@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Send, MessageCircle, Phone, Shield, Loader2, CheckCircle } from "lucide-react";
+import { Send, MessageCircle, Phone, Shield, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { submitContactForm } from "@/services/contactApi";

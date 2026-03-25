@@ -6,7 +6,7 @@ import logoDark from '@/assets/logo-dark.png';
 import { SiTiktok, SiSnapchat } from 'react-icons/si';
 
 const Footer = () => {
-  const { language, isRTL } = useLanguage();
+  const { language } = useLanguage();
   const { t } = useTranslation();
   const navigate = useNavigate();
   const location = useLocation();

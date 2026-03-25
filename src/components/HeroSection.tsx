@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useLanguage } from '@/contexts/LanguageContext';
 import { MessageCircle, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
 import heroDesktop from '@/assets/hero-desktop.png';
@@ -8,8 +7,7 @@ import heroMobile from '@/assets/hero-mobile.png';
 
 const HeroSection = () => {
   const { t } = useTranslation();
-  const { language } = useLanguage();
-  const isRTL = language === 'ar';
+
 
   return (
     <section className="hero-section relative overflow-hidden h-[calc(100vh-5rem)] min-h-[600px] flex items-center">

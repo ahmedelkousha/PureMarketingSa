@@ -95,7 +95,6 @@ const BlogPage = () => {
       .replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>');
   };
 
-  const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
 
   return (
     <>

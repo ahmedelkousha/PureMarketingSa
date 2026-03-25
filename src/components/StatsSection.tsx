@@ -42,7 +42,7 @@ const StatItem = ({ icon, endValue, suffix, label, delay }: StatItemProps) => {
       ref={ref}
       initial={{ opacity: 0, y: 30 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ duration: 0.6, delay:0.2 }}
+      transition={{ duration: 0.6 }}
       className="text-center"
     >
       <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-4">
