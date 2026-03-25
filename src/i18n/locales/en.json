@@ -26,7 +26,7 @@
     "badge": "Pure Marketing for Digital Marketing",
     "title": "A complete ecosystem for all digital growth needs;",
     "subTitle": "From digital strategies and smart campaigns, to building integrated stores and creative visual production.",
-    "cta": "Where quality meets innovation, to make the difference",
+    "cta": "A Saudi compass... with global standards.",
     "contactNow": "Contact Us Now",
     "bookConsultation": "Book Free Consultation"
   },
@@ -225,7 +225,9 @@
     "purePortfolio": "Pure Portfolio"
   },
   "servicePages": {
+    "portfolioTitle": "From Vision to Reality: Our Portfolio",
     "socialMedia": {
+      "portfolioDesc": "in developing and improving visual identity for professional representation of our clients",
       "title": "Social Media Management",
       "heroSubtitle": "Building a loyal community around your brand through strategic content that ensures continuous engagement",
       "description": "At Pure Marketing, we don't just manage your accounts; we create a 'personality' for your brand that speaks and interacts. We believe that social platforms are the bridge of trust between you and your audience; so we design comprehensive content strategies aimed at transforming silent followers into a loyal community that promotes your brand itself.",
@@ -254,6 +256,7 @@
       }
     },
     "paidAds": {
+      "portfolioDesc": "in managing and developing paid advertising campaigns that made a difference in our clients' sales growth",
       "title": "Paid Advertising Campaigns",
       "heroSubtitle": "Smart campaigns on all platforms that guarantee you the highest return on ad spend (ROAS)",
       "description": "We don't spend your budget, we invest it. We focus our campaigns on (Instagram, Snapchat, TikTok, and Google) to reach the quality customer ready to make a purchase decision. We use precise data to target the audience based on their purchasing behavior, ensuring the highest return on advertising spend (ROAS).",
@@ -282,6 +285,7 @@
       }
     },
     "motionGraphics": {
+      "portfolioDesc": "in editing, motion graphics, and visual image development for our clients",
       "title": "Video Editing & Motion Graphics",
       "heroSubtitle": "Transforming your ideas into visual and cinematic stories that captivate attention and remain in memory",
       "description": "In the age of visual content, the first second is decisive. We provide cinematic excellence that transforms your complex message into an exciting video that takes your breath away. Whether it's an explanatory motion graphics video or cinematic editing for your ads, we guarantee you visual quality that gives your brand exceptional prestige.",
@@ -310,6 +314,7 @@
       }
     },
     "websites": {
+      "portfolioDesc": "in building and developing digital platforms and e-commerce stores that took our clients' businesses to new heights",
       "title": "Websites & E-commerce",
       "heroSubtitle": "Designing a smooth user experience that converts visitors into actual customers with a single click",
       "description": "Your store is your facade to the world, and we build it to be a selling machine that works non-stop. We don't just focus on aesthetic appearance, but we pay utmost attention to user experience (UI/UX) and browsing speed, ensuring a smooth purchasing journey that ends with pressing the 'Order Completed' button.",

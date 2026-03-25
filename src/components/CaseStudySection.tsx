@@ -32,7 +32,7 @@ const CaseStudySection = () => {
             initial={{ opacity: 0, x: isRTL ? 50 : -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="order-2 lg:order-1">
+            className="order-2 lg:order-1 text-center lg:text-start">
             <p className="text-primary-foreground/80 text-lg mb-4">
               {t("caseStudy.title")}
             </p>

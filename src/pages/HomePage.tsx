@@ -29,7 +29,7 @@ const HomePage = () => {
     if (!location.hash) {
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   // Handle hash navigation
   useEffect(() => {
@@ -67,7 +67,7 @@ const HomePage = () => {
       <Header />
       
       <main className="pt-20">
-        <HeroSection />
+        <HeroSection /> 
         <StatsSection />
         <PartnersCarousel />
         <CaseStudySection />
@@ -76,8 +76,8 @@ const HomePage = () => {
         <PortfolioSection />
         <WhyUsSection />
         <TestimonialsSection />
-        <BlogSection />
         <ContactSection />
+        <BlogSection />
       </main>
 
       <Footer />

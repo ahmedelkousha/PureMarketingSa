@@ -142,18 +142,14 @@
     ::-webkit-scrollbar-thumb:hover {
       background: hsl(var(--primary)); /* Full brand purple on hover */
     }
-
-    /* 2. Firefox */
-    html {
-      /* "thumb color" "track color" */
-      scrollbar-color: hsl(var(--primary) / 0.6) hsl(var(--muted));
-      scrollbar-width: thin; /* Options: auto, thin, none */
-    }
   }
 
   html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+          /* "thumb color" "track color" */
+      scrollbar-color: hsl(var(--primary) / 0.6) hsl(var(--muted));
+      scrollbar-width: thin; /* Options: auto, thin, none */
   }
 
   body {
@@ -210,7 +206,7 @@
 
   /* CTA Button Styles */
   .btn-hero {
-    @apply inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300;
+    @apply inline-flex items-center justify-center gap-2 px-3 py-3 rounded-xl font-semibold text-sm transition-all duration-300;
   }
 
   .btn-hero-primary {
@@ -239,7 +235,7 @@
 
   /* WhatsApp Button */
   .whatsapp-float {
-    @apply fixed bottom-6 z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600;
+    @apply fixed bottom-6 z-50 bg-green-500 text-white w-fit p-4 rounded-full shadow-lg hover:bg-green-600;
     box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
   }
 
@@ -253,8 +249,9 @@
 
   /* Scroll to Top Button */
   .scroll-to-top-btn {
-    @apply fixed bottom-6 z-40 bg-primary text-primary-foreground p-3 rounded-full shadow-lg hover:bg-primary/90 cursor-pointer;
+    @apply fixed bottom-6 z-40 w-fit bg-primary text-primary-foreground p-3 rounded-full shadow-lg hover:bg-primary/90 cursor-pointer;
     box-shadow: var(--shadow-purple);
+    
   }
 
   [dir="ltr"] .scroll-to-top-btn {
@@ -343,10 +340,13 @@
 .blog-swiper .swiper-button-prev {
   color: hsl(var(--primary));
   background: hsl(var(--background));
-  width: 44px;
-  height: 44px;
+  width:40px;
+  height: 40px;
   border-radius: 50%;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  top: 50% !important;
+  transform: translate(0,-50%) !important;
+  padding: 7px;
 }
 
 .portfolio-swiper .swiper-button-next::after,
@@ -365,6 +365,12 @@
 [dir="rtl"] .swiper-button-prev {
   right: 10px;
   left: auto;
+}
+
+.partners-swiper .swiper-wrapper {
+  -webkit-transition-timing-function: linear !important;
+  -o-transition-timing-function: linear !important;
+  transition-timing-function: linear !important;
 }
 
 /* Hide swiper buttons on mobile */
