@@ -16,6 +16,7 @@ import { VideoCarouselSection } from "@/components/VideoCarousel";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import BackButton from "@/components/BackButton";
 import { VideoItem } from "@/components/VideoCarousel";
+import { Lightbox } from "@/components/Lightbox";
 
 // ---------------------------------------------------------------------------
 // Gallery image imports
@@ -261,39 +262,11 @@ const PortfolioPage = () => {
       <Footer />
       <WhatsAppButton />
 
-      {/* Lightbox Modal */}
-      <AnimatePresence>
-        {lightboxOpen && lightboxImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/95"
-            onClick={closeLightbox}>
-            <button
-              onClick={closeLightbox}
-              className="absolute top-4 right-4 md:top-6 md:right-6 z-10 p-3 rounded-full bg-white/20 hover:bg-white/30 transition-colors">
-              <X className="w-8 h-8 text-white" />
-            </button>
-            <motion.div
-              onClick={(e) => e.stopPropagation()}
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ type: "spring", damping: 25 }}
-              className="relative w-full h-full flex items-center justify-center p-4 md:p-8">
-              <img
-                src={lightboxImage}
-                alt="Fullscreen view"
-                loading="lazy"
-                decoding="async"
-                className="max-w-full max-h-full object-contain"
-                draggable={false}
-              />
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Lightbox
+        isOpen={lightboxOpen}
+        imageSrc={lightboxImage}
+        onClose={closeLightbox}
+      />
     </>
   );
 };

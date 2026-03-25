@@ -24,6 +24,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 import { caseStudyContent } from "@/data/content";
 import BackButton from "@/components/BackButton";
+import { Lightbox } from "@/components/Lightbox";
 
 // Campaign image imports
 import campaignImage1 from "@/assets/case-study/google.png";
@@ -62,7 +63,7 @@ const CaseStudyPage = () => {
 
       <Header />
 
-      <main className="pt-20">
+      <main className={`pt-20 ${isRTL ? 'rtl' : 'ltr'}`}>
         <div className="container-custom pt-6">
           <BackButton />
         </div>
@@ -379,34 +380,11 @@ const CaseStudyPage = () => {
       <WhatsAppButton />
       <ScrollToTopButton />
 
-      {/* Lightbox Modal */}
-      <AnimatePresence>
-        {lightboxImage && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 overflow-hidden"
-            onClick={() => setLightboxImage(null)}>
-            <button
-              onClick={() => setLightboxImage(null)}
-              className="absolute top-4 right-4 z-10 w-12 h-12 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors">
-              <X className="w-6 h-6 text-white" />
-            </button>
-            <motion.img
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              src={lightboxImage}
-              alt="Fullscreen view"
-              loading="lazy"
-              decoding="async"
-              className="max-w-full max-h-[90vh] w-auto h-auto object-contain rounded-lg"
-              onClick={(e) => e.stopPropagation()}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <Lightbox
+        isOpen={!!lightboxImage}
+        imageSrc={lightboxImage}
+        onClose={() => setLightboxImage(null)}
+      />
     </>
   );
 };

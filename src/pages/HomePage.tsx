@@ -29,7 +29,7 @@ const HomePage = () => {
     if (!location.hash) {
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
-  }, [location.pathname]);
+  }, [location.pathname, location.hash]);
 
   // Handle hash navigation
   useEffect(() => {

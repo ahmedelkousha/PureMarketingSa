@@ -244,32 +244,32 @@ export const caseStudyContent = {
     channelsIntro:
       "Each platform was used according to its role within the customer journey:",
     channels: [
-  {
-    name: "Google Ads",
-    details: [
-      "Search campaigns to target actual demand",
-      "Performance Max campaigns for retargeting and expansion",
+      {
+        name: "Google Ads",
+        details: [
+          "Search campaigns to target actual demand",
+          "Performance Max campaigns for retargeting and expansion",
+        ],
+      },
+      {
+        name: "Meta (Facebook & Instagram)",
+        details: [
+          "Awareness and engagement campaigns targeting lookalike audiences",
+          "Dynamic retargeting ads for website visitors to boost conversions",
+        ],
+      },
+      {
+        name: "Snapchat",
+        details: [
+          "Targeting younger demographics with engaging Story ads",
+          "App install and lead generation campaigns",
+        ],
+      },
+      {
+        name: "TikTok",
+        details: ["Used for lead generation and brand awareness building"],
+      },
     ],
-  },
-  {
-    name: "Meta (Facebook & Instagram)",
-    details: [
-      "Awareness and engagement campaigns targeting lookalike audiences",
-      "Dynamic retargeting ads for website visitors to boost conversions",
-    ],
-  },
-  {
-    name: "Snapchat",
-    details: [
-      "Targeting younger demographics with engaging Story ads",
-      "App install and lead generation campaigns",
-    ],
-  },
-  {
-    name: "TikTok",
-    details: ["Used for lead generation and brand awareness building"],
-  },
-],
     resultsTitle: "Results & Business Impact",
     results: [
       "2,006 confirmed bookings achieved in just 3 months",
@@ -391,7 +391,7 @@ Gulf customers love appreciation. You can't send a generic offer to everyone.
     slug: 'social-media-strategy-guide',
     image: 'https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?w=800&h=500&fit=crop',
     readTime: 8,
-    date: '2025-01-02',
+    date: '2026-03-02',
     title: {
       ar: 'دليل استراتيجية السوشيال ميديا 2026: من "المتابعة" إلى "الولاء"',
       en: 'Social Media Strategy Guide 2026: From "Following" to "Loyalty"',
@@ -519,7 +519,7 @@ AI is your friend in 2026:
     slug: 'ecommerce-success-tips',
     image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop',
     readTime: 6,
-    date: '2024-12-28',
+    date: '2026-02-28',
     title: {
       ar: '5 قواعد ذهبية لنجاح متجرك الإلكتروني في الخليج (2026)',
       en: '5 Golden Rules for E-commerce Success in the Gulf (2026)',
@@ -601,7 +601,7 @@ E-commerce success in the Gulf now depends on **(Trust + Speed + Easy UX)**. If 
     slug: 'paid-ads-optimization',
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop',
     readTime: 7,
-    date: '2024-12-20',
+    date: '2026-03-20',
     title: {
       ar: 'كيف تجعل إعلاناتك "ماكينة أرباح" في 2026؟ 🚀',
       en: 'How to Turn Your Ads Into a "Profit Machine" in 2026 🚀',
