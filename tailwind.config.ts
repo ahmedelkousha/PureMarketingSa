@@ -13,6 +13,9 @@ export default {
       },
     },
     extend: {
+      screens: {
+        'xs': '390px',
+      },
       fontFamily: {
         sans: ['Cairo', 'sans-serif'],
         display: ['Cairo', 'sans-serif'],

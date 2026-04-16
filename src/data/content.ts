@@ -517,7 +517,7 @@ AI is your friend in 2026:
   },
   {
     slug: 'ecommerce-success-tips',
-    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=500&fit=crop',
+    image: '/gold-advices.jpeg',
     readTime: 6,
     date: '2026-02-28',
     title: {

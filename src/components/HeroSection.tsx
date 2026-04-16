@@ -24,7 +24,7 @@ const HeroSection = () => {
       />
 
       <div className={`w-full h-full relative z-10 py-10 lg:py-32 px-4 `}>
-        <div className="flex flex-col h-full gap-8 justify-center lg:gap-12 items-center max-w-[24rem] lg:max-w-[60rem] xl:max-w-[70rem] sm:max-w-[30rem] md:max-w-[38rem] mx-auto max-w-3xl">
+        <div className="flex flex-col h-full gap-8 justify-center lg:gap-12 items-center max-w-[22rem] lg:max-w-[60rem] xl:max-w-[70rem] sm:max-w-[30rem] md:max-w-[38rem] mx-auto">
           {/* Text Content */}
 
           <div className={`text-center flex flex-col md:gap-6 m-auto h-full`}>
@@ -41,7 +41,7 @@ const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-[22px] sm:text-[28px] md:text-4xl lg:text-5xl xl:text-6xl font-extrabold lg:font-extrabold leading-[1.8] mx-[0.83em] lg:mx-[7rem] lg:leading-[72px] xl:leading-[82px] text-white whitespace-pre-line mt-8">
+                className="text-[21px] sm:text-[28px] md:text-4xl lg:text-5xl xl:text-6xl font-extrabold lg:font-extrabold leading-[1.8] mx-[0.83em] lg:mx-[7rem] lg:leading-[72px] xl:leading-[82px] text-white whitespace-pre-line mt-8">
                 {t("hero.title")}{' '}{t("hero.subTitle")}
               </motion.h2>
               {/* <motion.h2

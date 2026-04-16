@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Phone, Mail, MapPin, Instagram, Twitter, Linkedin, Facebook, Youtube } from 'lucide-react';
 import logoDark from '@/assets/logo-dark.png';
+import mediaLogo from '@/assets/media.png';
+import commerceLogo from '@/assets/ministry-of-commerce-and-industry.png';
 import { SiTiktok, SiSnapchat } from 'react-icons/si';
 
 const Footer = () => {
@@ -208,8 +210,22 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-16 pt-8 border-t border-white/20 text-center">
-          <p className="text-white/60">{t("footer.copyright")}</p>
+        <div className="mt-16 pt-8 border-t border-white/20 flex flex-col items-center gap-6">
+          <p className="text-white/60 text-sm md:text-base text-center leading-relaxed">
+            {t("footer.copyright")}
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 pb-4 opacity-80 hover:opacity-100 transition-opacity">
+            <img 
+              src={commerceLogo} 
+              alt="Ministry of Commerce" 
+              className="h-12 md:h-16 w-auto object-contain bg-white rounded p-1.5" 
+            />
+            <img 
+              src={mediaLogo} 
+              alt="General Authority of Media Regulation" 
+              className="h-12 md:h-16 w-auto object-contain bg-white rounded p-1.5" 
+            />
+          </div>
         </div>
       </div>
     </footer>
