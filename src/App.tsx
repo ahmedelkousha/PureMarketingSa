@@ -18,6 +18,17 @@ const BlogListPage = lazy(() => import("./pages/BlogListPage"));
 const PortfolioPage = lazy(() => import("./pages/PortfolioPage"));
 const CaseStudyPage = lazy(() => import("./pages/CaseStudyPage"));
 const NotFound = lazy(() => import("./pages/NotFound"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
+const DashboardPage = lazy(() => import("./pages/DashboardPage"));
+import { ProtectedRoute } from "@/components/ProtectedRoute";
+import { Navigate } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
+
+// Localized Redirect Component
+const LocalizedRedirect = ({ to }: { to: string }) => {
+  const { language } = useLanguage();
+  return <Navigate to={`/${language}${to}`} replace />;
+};
 
 // Loading fallback component
 const PageLoader = () => (
@@ -40,20 +51,28 @@ const App = () => (
               <Suspense fallback={<PageLoader />}>
                 <Routes>
                   <Route path="/" element={<Index />} />
-                  <Route path="/ar" element={<HomePage />} />
-                  <Route path="/en" element={<HomePage />} />
-                  <Route path="/ar/services/:slug" element={<ServicePage />} />
-                  <Route path="/en/services/:slug" element={<ServicePage />} />
-                  <Route path="/ar/blog" element={<BlogListPage />} />
-                  <Route path="/en/blog" element={<BlogListPage />} />
-                  <Route path="/ar/blog/:slug" element={<BlogPage />} />
-                  <Route path="/en/blog/:slug" element={<BlogPage />} />
-                  <Route path="/ar/portfolio" element={<PortfolioPage />} />
-                  <Route path="/en/portfolio" element={<PortfolioPage />} />
-                  <Route path="/ar/case-study" element={<CaseStudyPage />} />
-                  <Route path="/en/case-study" element={<CaseStudyPage />} />
-                  <Route path="/ar/*" element={<HomePage />} />
-                  <Route path="/en/*" element={<HomePage />} />
+                  
+                  {/* Language-Aware App Routes */}
+                  <Route path="/:lang" element={<HomePage />} />
+                  <Route path="/:lang/services/:slug" element={<ServicePage />} />
+                  <Route path="/:lang/blog" element={<BlogListPage />} />
+                  <Route path="/:lang/blog/:slug" element={<BlogPage />} />
+                  <Route path="/:lang/portfolio" element={<PortfolioPage />} />
+                  <Route path="/:lang/case-study" element={<CaseStudyPage />} />
+                  <Route path="/:lang/*" element={<HomePage />} />
+                  
+                  {/* Admin Routes */}
+                  <Route path="/:lang/admin" element={<LoginPage />} />
+                  <Route path="/:lang/admin/dashboard" element={
+                    <ProtectedRoute>
+                      <DashboardPage />
+                    </ProtectedRoute>
+                  } />
+                  
+                  {/* Default fallback for admin without language */}
+                  <Route path="/admin" element={<LocalizedRedirect to="/admin" />} />
+                  <Route path="/admin/dashboard" element={<LocalizedRedirect to="/admin/dashboard" />} />
+                  
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>

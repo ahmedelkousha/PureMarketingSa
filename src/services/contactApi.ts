@@ -1,7 +1,5 @@
-import axios from "axios";
-
-// TODO: Replace with your actual Express.js backend URL when deployed
-const API_BASE_URL = "http://localhost:5000";
+import { collection, addDoc } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 export interface ContactSubmission {
   name: string;
@@ -13,7 +11,16 @@ export interface ContactSubmission {
 
 export const submitContactForm = async (
   data: ContactSubmission,
-): Promise<{ success: boolean }> => {
-  const response = await axios.post(`${API_BASE_URL}/submitquery`, data);
-  return response.data;
+): Promise<{ success: boolean; id?: string }> => {
+  try {
+    const docRef = await addDoc(collection(db, "contacts"), {
+      ...data,
+      status: "active",
+      createdAt: new Date().toISOString(),
+    });
+    return { success: true, id: docRef.id };
+  } catch (error) {
+    console.error("Error submitting contact form: ", error);
+    return { success: false };
+  }
 };

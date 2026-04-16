@@ -24,8 +24,8 @@
   },
   "hero": {
     "badge": "Pure Marketing for Digital Marketing",
-    "title": "A complete ecosystem for all digital growth needs;",
-    "subTitle": "From digital strategies and smart campaigns, to building integrated stores and creative visual production.",
+    "title": "Your gateway to digital growth;",
+    "subTitle": "Smart solutions that combine strategic planning, store building, and innovative visual production for exceptional results.",
     "cta": "A Saudi compass... with global standards.",
     "contactNow": "Contact Us Now",
     "bookConsultation": "Book Free Consultation"
@@ -355,6 +355,54 @@
     "contact": {
       "title": "Contact Us | Pure Marketing",
       "description": "Get in touch with Pure Marketing for your digital marketing needs. Book a free consultation today."
+    }
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Portal",
+      "signInSubtitle": "Enter your credentials to access the dashboard",
+      "createAccountSubtitle": "Create a new admin account",
+      "email": "Email",
+      "emailPlaceholder": "admin@example.com",
+      "password": "Password",
+      "signInButton": "Sign In",
+      "createAccountButton": "Create Account",
+      "loading": "Please wait...",
+      "noAccount": "Don't have an account? Create one",
+      "hasAccount": "Already have an account? Sign in",
+      "loginSuccess": "Successfully logged in",
+      "createSuccess": "Account created successfully",
+      "authFailed": "Authentication failed"
+    },
+    "dashboard": {
+      "title": "Admin Dashboard",
+      "logout": "Logout",
+      "logoutFailed": "Failed to log out",
+      "contactSubmissions": "Contact Form Submissions",
+      "description": "View all inquiries submitted through your website's contact form.",
+      "loading": "Failed to load contacts. Please verify your Firebase connection.",
+      "noContacts": "No contact submissions found.",
+      "tableDate": "Date",
+      "tableName": "Name",
+      "tablePhone": "Phone",
+      "tableMethod": "Method",
+      "tableService": "Service",
+      "tableDetails": "Details",
+      "tableActions": "Actions",
+      "tabActive": "Active",
+      "tabRead": "Read",
+      "tabArchived": "Archived",
+      "viewDetails": "View Details",
+      "markAsRead": "Mark as Read",
+      "moveToArchive": "Archive",
+      "moveToActive": "Restore to Active",
+      "delete": "Delete",
+      "deleteConfirmTitle": "Delete Submission?",
+      "deleteConfirmMessage": "Are you sure you want to delete this submission? This action cannot be undone.",
+      "cancel": "Cancel",
+      "yesDelete": "Yes, Delete",
+      "close": "Close",
+      "status": "Status"
     }
   }
 }

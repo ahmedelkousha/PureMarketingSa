@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
-import { Target, Users, Award, TrendingUp } from 'lucide-react';
+import { Target, Users, Award, TrendingUp, Shield } from 'lucide-react';
 
 const AboutSection = () => {
   const { t } = useTranslation();
@@ -31,7 +31,7 @@ const AboutSection = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -44,13 +44,22 @@ const AboutSection = () => {
             <p className="text-lg leading-relaxed text-muted-foreground">
               {t('about.description2')}
             </p>
-          </motion.div>
+          </motion.div> */}
+
+          <div className="flex items-start gap-4 p-4 sm:p-6 rounded-xl bg-background border border-border">
+            <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-primary flex-shrink-0" />
+            <div>
+              <p className="text-foreground leading-relaxed text-sm sm:text-base">
+                {t("closing.licensed")}
+              </p>
+            </div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 ,delay:0.4}}
+            transition={{ duration: 0.6, delay: 0.4 }}
             className="grid grid-cols-2 gap-6"
           >
             {features.map((feature, index) => {
