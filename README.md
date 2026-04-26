@@ -7,3 +7,8 @@ This project is built with:
 - React
 - shadcn-ui
 - Tailwind CSS
+- Firebase
+- Framer Motion
+- React i18next
+- React Router
+- React Hook Form

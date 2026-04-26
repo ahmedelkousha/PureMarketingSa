@@ -2,8 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { 
-  signInWithEmailAndPassword, 
-  createUserWithEmailAndPassword 
+  signInWithEmailAndPassword 
 } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { Button } from "@/components/ui/button";
@@ -13,9 +12,10 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { toast } from "sonner";
 import { Lock, Home } from "lucide-react";
 
+import { Helmet } from "react-helmet-async";
+
 const LoginPage = () => {
   const { t, i18n } = useTranslation();
-  const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -26,13 +26,8 @@ const LoginPage = () => {
     setIsLoading(true);
 
     try {
-      if (isLogin) {
-        await signInWithEmailAndPassword(auth, email, password);
-        toast.success(t('admin.login.loginSuccess'));
-      } else {
-        await createUserWithEmailAndPassword(auth, email, password);
-        toast.success(t('admin.login.createSuccess'));
-      }
+      await signInWithEmailAndPassword(auth, email, password);
+      toast.success(t('admin.login.loginSuccess'));
       navigate(`/${i18n.language}/admin/dashboard`);
     } catch (error: any) {
       toast.error(error.message || t('admin.login.authFailed'));
@@ -42,6 +37,10 @@ const LoginPage = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
     <div className={`min-h-screen flex items-center justify-center bg-muted/30 p-4 ${i18n.language === 'ar' ? 'font-arabic' : ''}`} dir={i18n.dir()}>
       <div className="absolute top-4 start-4">
         <Button 
@@ -61,9 +60,7 @@ const LoginPage = () => {
           </div>
           <CardTitle className="text-2xl font-bold font-serif">{t('admin.login.title')}</CardTitle>
           <CardDescription>
-            {isLogin 
-              ? t('admin.login.signInSubtitle') 
-              : t('admin.login.createAccountSubtitle')}
+            {t('admin.login.signInSubtitle')}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -98,23 +95,18 @@ const LoginPage = () => {
             >
               {isLoading 
                 ? t('admin.login.loading') 
-                : (isLogin ? t('admin.login.signInButton') : t('admin.login.createAccountButton'))}
+                : t('admin.login.signInButton')}
             </Button>
           </form>
         </CardContent>
         <CardFooter className="flex justify-center border-t pt-4">
-          <button
-            type="button"
-            onClick={() => setIsLogin(!isLogin)}
-            className="text-sm text-muted-foreground hover:text-primary transition-colors hover:underline"
-          >
-            {isLogin 
-              ? t('admin.login.noAccount') 
-              : t('admin.login.hasAccount')}
-          </button>
+          <p className="text-sm text-muted-foreground">
+            {t('admin.login.protectedArea', 'Protected Admin Area')}
+          </p>
         </CardFooter>
       </Card>
     </div>
+    </>
   );
 };
 

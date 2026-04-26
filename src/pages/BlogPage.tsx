@@ -101,8 +101,25 @@ const BlogPage = () => {
       <Helmet>
         <title>{title} | Pure Marketing</title>
         <meta name="description" content={post.excerpt[lang] || post.excerpt.ar} />
-        <link rel="canonical" href={`https://puremarketing.sa/${language}/blog/${slug}`} />
+        <link rel="canonical" href={`https://puremarketingsa.com/${language}/blog/${slug}`} />
+        <link rel="alternate" hrefLang="ar" href={`https://puremarketingsa.com/ar/blog/${slug}`} />
+        <link rel="alternate" hrefLang="en" href={`https://puremarketingsa.com/en/blog/${slug}`} />
+        <link rel="alternate" hrefLang="x-default" href={`https://puremarketingsa.com/ar/blog/${slug}`} />
         <html lang={language} dir={isRTL ? 'rtl' : 'ltr'} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={`${title} | Pure Marketing`} />
+        <meta property="og:description" content={post.excerpt[lang] || post.excerpt.ar} />
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content={`https://puremarketingsa.com/${language}/blog/${slug}`} />
+        <meta property="og:image" content="https://puremarketingsa.com/og-image.png" />
+        <meta property="og:site_name" content="Pure Marketing" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${title} | Pure Marketing`} />
+        <meta name="twitter:description" content={post.excerpt[lang] || post.excerpt.ar} />
+        <meta name="twitter:image" content="https://puremarketingsa.com/og-image.png" />
       </Helmet>
 
       <Header />

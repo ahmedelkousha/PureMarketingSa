@@ -51,7 +51,7 @@ const App = () => (
               <Suspense fallback={<PageLoader />}>
                 <Routes>
                   <Route path="/" element={<Index />} />
-                  
+
                   {/* Language-Aware App Routes */}
                   <Route path="/:lang" element={<HomePage />} />
                   <Route path="/:lang/services/:slug" element={<ServicePage />} />
@@ -60,7 +60,7 @@ const App = () => (
                   <Route path="/:lang/portfolio" element={<PortfolioPage />} />
                   <Route path="/:lang/case-study" element={<CaseStudyPage />} />
                   <Route path="/:lang/*" element={<HomePage />} />
-                  
+
                   {/* Admin Routes */}
                   <Route path="/:lang/admin" element={<LoginPage />} />
                   <Route path="/:lang/admin/dashboard" element={
@@ -68,11 +68,11 @@ const App = () => (
                       <DashboardPage />
                     </ProtectedRoute>
                   } />
-                  
+
                   {/* Default fallback for admin without language */}
                   <Route path="/admin" element={<LocalizedRedirect to="/admin" />} />
                   <Route path="/admin/dashboard" element={<LocalizedRedirect to="/admin/dashboard" />} />
-                  
+
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>

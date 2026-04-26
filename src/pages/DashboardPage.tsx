@@ -25,6 +25,8 @@ interface FirebaseContact extends ContactSubmission {
   status?: "active" | "read" | "archived";
 }
 
+import { Helmet } from "react-helmet-async";
+
 const DashboardPage = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
@@ -113,6 +115,10 @@ const DashboardPage = () => {
   };
 
   return (
+    <>
+      <Helmet>
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
     <div className={`min-h-screen bg-muted/20 pb-12 ${i18n.language === 'ar' ? 'font-arabic' : ''}`} dir={i18n.dir()}>
       <header className="bg-background border-b border-border/50 sticky top-0 z-10">
         <div className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -380,6 +386,7 @@ const DashboardPage = () => {
         )}
       </AnimatePresence>
     </div>
+    </>
   );
 };
 

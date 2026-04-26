@@ -117,10 +117,10 @@ const Footer = () => {
                 <span dir='ltr'>+966 56 952 2042</span>
               </a>
               <a
-                href="mailto:info@puremarketing.sa"
+                href="mailto:info@puremarketingsa.com"
                 className="flex items-center gap-3 text-white/80 hover:text-primary transition-colors text-sm">
                 <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>info@puremarketing.sa</span>
+                <span>info@puremarketingsa.com</span>
               </a>
               <div className="flex items-center gap-3 text-white/80 text-sm">
                 <MapPin className="w-4 h-4 flex-shrink-0" />
@@ -215,15 +215,15 @@ const Footer = () => {
             {t("footer.copyright")}
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 pb-4 opacity-80 hover:opacity-100 transition-opacity">
-            <img 
-              src={commerceLogo} 
-              alt="Ministry of Commerce" 
-              className="h-12 md:h-16 w-auto object-contain bg-white rounded p-1.5" 
+            <img
+              src={commerceLogo}
+              alt="Ministry of Commerce"
+              className="h-12 md:h-16 w-auto object-contain bg-white rounded p-1.5"
             />
-            <img 
-              src={mediaLogo} 
-              alt="General Authority of Media Regulation" 
-              className="h-12 md:h-16 w-auto object-contain bg-white rounded p-1.5" 
+            <img
+              src={mediaLogo}
+              alt="General Authority of Media Regulation"
+              className="h-12 md:h-16 w-auto object-contain bg-white rounded p-1.5"
             />
           </div>
         </div>

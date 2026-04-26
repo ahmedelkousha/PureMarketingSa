@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { MessageCircle, Phone } from 'lucide-react';
 import { motion } from 'framer-motion';
-import heroDesktop from '@/assets/hero-desktop.png';
-import heroMobile from '@/assets/heroMobile.png';
+import heroDesktop from '@/assets/hero-desktop.webp';
+import heroMobile from '@/assets/heroMobile.webp';
 
 const HeroSection = () => {
   const { t } = useTranslation();
@@ -14,12 +14,12 @@ const HeroSection = () => {
       {/* Background Images */}
       <img
         src={heroDesktop}
-        alt=""
+        alt="وكالة تسويق رقمي في السعودية - بيور ماركتنج"
         className="absolute inset-0 w-full h-full object-cover hidden md:block md:object-right 2xl:object-center"
       />
       <img
         src={heroMobile}
-        alt=""
+        alt="بيور ماركتنج - حلول تسويقية ذكية"
         className="absolute inset-0 w-full h-full object-cover object-bottom md:hidden"
       />
 

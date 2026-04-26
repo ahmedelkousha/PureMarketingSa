@@ -355,6 +355,22 @@
     "contact": {
       "title": "Contact Us | Pure Marketing",
       "description": "Get in touch with Pure Marketing for your digital marketing needs. Book a free consultation today."
+    },
+    "socialMedia": {
+      "title": "Social Media Management in Saudi Arabia | Pure Marketing",
+      "description": "Professional social media management services in Saudi Arabia. Creative content creation, engagement growth, and digital brand development."
+    },
+    "paidAds": {
+      "title": "Paid Advertising Campaigns (Snapchat, TikTok, Google) | Pure Marketing",
+      "description": "Achieve the highest ROI with our paid ad campaigns. Specialists in Snapchat, TikTok, Google, and Instagram ads in the Saudi market."
+    },
+    "motionGraphics": {
+      "title": "Motion Graphics & Cinematic Video Editing | Pure Marketing",
+      "description": "Transform your ideas into captivating visual experiences with professional motion graphics and video editing services from Pure Marketing."
+    },
+    "websites": {
+      "title": "Fast Website & E-commerce Development (Salla, Zid) | Pure Marketing",
+      "description": "We build fast, high-performance websites and e-commerce stores designed to convert visitors into loyal customers."
     }
   },
   "admin": {
@@ -367,6 +383,7 @@
       "password": "Password",
       "signInButton": "Sign In",
       "createAccountButton": "Create Account",
+      "protectedArea": "Protected Admin Area",
       "loading": "Please wait...",
       "noAccount": "Don't have an account? Create one",
       "hasAccount": "Already have an account? Sign in",

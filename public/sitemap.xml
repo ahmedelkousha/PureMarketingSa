@@ -1,31 +1,190 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home Pages -->
   <url>
-    <loc>https://puremarketing.sa/ar</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketing.sa/ar"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketing.sa/en"/>
+    <loc>https://puremarketingsa.com/ar</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar"/>
   </url>
   <url>
-    <loc>https://puremarketing.sa/en</loc>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketing.sa/ar"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketing.sa/en"/>
+    <loc>https://puremarketingsa.com/en</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar"/>
+  </url>
+
+  <!-- Social Media Service Pages -->
+  <url>
+    <loc>https://puremarketingsa.com/ar/services/social-media-management</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/services/social-media-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/services/social-media-management"/>
   </url>
   <url>
-    <loc>https://puremarketing.sa/ar/services/social-media-management</loc>
+    <loc>https://puremarketingsa.com/en/services/social-media-management</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/services/social-media-management"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/services/social-media-management"/>
+  </url>
+
+  <!-- Paid Ads Service Pages -->
+  <url>
+    <loc>https://puremarketingsa.com/ar/services/paid-ads-campaigns</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/services/paid-ads-campaigns"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/services/paid-ads-campaigns"/>
   </url>
   <url>
-    <loc>https://puremarketing.sa/ar/services/paid-ads-campaigns</loc>
+    <loc>https://puremarketingsa.com/en/services/paid-ads-campaigns</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/services/paid-ads-campaigns"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/services/paid-ads-campaigns"/>
+  </url>
+
+  <!-- Websites/Ecommerce Service Pages -->
+  <url>
+    <loc>https://puremarketingsa.com/ar/services/websites-ecommerce</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/services/websites-ecommerce"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/services/websites-ecommerce"/>
   </url>
   <url>
-    <loc>https://puremarketing.sa/ar/services/video-editing-motion-graphics</loc>
+    <loc>https://puremarketingsa.com/en/services/websites-ecommerce</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/services/websites-ecommerce"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/services/websites-ecommerce"/>
+  </url>
+
+  <!-- Motion Graphics Service Pages -->
+  <url>
+    <loc>https://puremarketingsa.com/ar/services/video-editing-motion-graphics</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/services/video-editing-motion-graphics"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/services/video-editing-motion-graphics"/>
   </url>
   <url>
-    <loc>https://puremarketing.sa/ar/services/websites-ecommerce</loc>
+    <loc>https://puremarketingsa.com/en/services/video-editing-motion-graphics</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/services/video-editing-motion-graphics"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/services/video-editing-motion-graphics"/>
   </url>
+
+  <!-- Blog List Pages -->
+  <url>
+    <loc>https://puremarketingsa.com/ar/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/blog"/>
+  </url>
+  <url>
+    <loc>https://puremarketingsa.com/en/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/blog"/>
+  </url>
+
+  <!-- Portfolio Pages -->
+  <url>
+    <loc>https://puremarketingsa.com/ar/portfolio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/portfolio"/>
+  </url>
+  <url>
+    <loc>https://puremarketingsa.com/en/portfolio</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/portfolio"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/portfolio"/>
+  </url>
+
+  <!-- Case Study Pages -->
+  <url>
+    <loc>https://puremarketingsa.com/ar/case-study</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/case-study"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/case-study"/>
+  </url>
+  <url>
+    <loc>https://puremarketingsa.com/en/case-study</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/case-study"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/case-study"/>
+  </url>
+
+  <!-- Individual Blog Posts -->
+  <url>
+    <loc>https://puremarketingsa.com/ar/blog/digital-marketing-trends-2025</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/blog/digital-marketing-trends-2025"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/blog/digital-marketing-trends-2025"/>
+  </url>
+  <url>
+    <loc>https://puremarketingsa.com/en/blog/digital-marketing-trends-2025</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/blog/digital-marketing-trends-2025"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/blog/digital-marketing-trends-2025"/>
+  </url>
+  <url>
+    <loc>https://puremarketingsa.com/ar/blog/social-media-strategy-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/blog/social-media-strategy-guide"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/blog/social-media-strategy-guide"/>
+  </url>
+  <url>
+    <loc>https://puremarketingsa.com/en/blog/social-media-strategy-guide</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/blog/social-media-strategy-guide"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/blog/social-media-strategy-guide"/>
+  </url>
+  <url>
+    <loc>https://puremarketingsa.com/ar/blog/ecommerce-success-tips</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/blog/ecommerce-success-tips"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/blog/ecommerce-success-tips"/>
+  </url>
+  <url>
+    <loc>https://puremarketingsa.com/en/blog/ecommerce-success-tips</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/blog/ecommerce-success-tips"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/blog/ecommerce-success-tips"/>
+  </url>
+  <url>
+    <loc>https://puremarketingsa.com/ar/blog/paid-ads-optimization</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/blog/paid-ads-optimization"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/blog/paid-ads-optimization"/>
+  </url>
+  <url>
+    <loc>https://puremarketingsa.com/en/blog/paid-ads-optimization</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://puremarketingsa.com/en/blog/paid-ads-optimization"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://puremarketingsa.com/ar/blog/paid-ads-optimization"/>
+  </url>
+
 </urlset>
