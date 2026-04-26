@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Send, MessageCircle, Phone, Shield, Loader2, CheckCircle } from "lucide-react";
+import { Send, MessageCircle, Phone, Shield, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { submitContactForm } from "@/services/contactApi";
@@ -36,7 +36,9 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      await submitContactForm(formData);
+      const result = await submitContactForm(formData);
+      if (!result.success) throw new Error("Submission failed");
+      
       toast({
         title: t("contact.successTitle"),
         description: t("contact.successMessage"),
@@ -89,14 +91,14 @@ const ContactSection = () => {
               </a>
             </div>
 
-            <div className="flex items-start gap-4 p-4 sm:p-6 rounded-xl bg-background border border-border">
+            {/* <div className="flex items-start gap-4 p-4 sm:p-6 rounded-xl bg-background border border-border">
               <Shield className="w-8 h-8 sm:w-10 sm:h-10 text-primary flex-shrink-0" />
               <div>
                 <p className="text-foreground leading-relaxed text-sm sm:text-base">
                   {t("closing.licensed")}
                 </p>
               </div>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Right Column - Contact Form */}
@@ -193,9 +195,9 @@ const ContactSection = () => {
                     required>
                     <option value="">{t("contact.selectService")}</option>
                     {services.map((service) => (
-                      <option key={service.key} value={service.value}>
+                      <option key={service.key} value={t(`services.${service.key}.title`)}>
                         {t(`services.${service.key}.title`)}
-                    </option>
+                      </option>
                     ))}
                   </select>
                 </div>

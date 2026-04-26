@@ -2,24 +2,17 @@ import { useParams, Navigate, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import {
-  ArrowRight,
-  ArrowLeft,
-  CheckCircle,
   MessageCircle,
   Phone,
   ZoomIn,
-  X,
-  Play,
-  ExternalLink,
 } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { Button } from "@/components/ui/button";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -202,16 +195,33 @@ const ServicePage = () => {
   return (
     <>
       <Helmet>
-        <title>{t(`servicePages.${serviceKey}.title`)} | Pure Marketing</title>
+        <title>{t(`seo.${serviceKey}.title`)}</title>
         <meta
           name="description"
-          content={t(`servicePages.${serviceKey}.description`)}
+          content={t(`seo.${serviceKey}.description`)}
         />
         <link
           rel="canonical"
-          href={`https://puremarketing.sa/${language}/services/${slug}`}
+          href={`https://puremarketingsa.com/${language}/services/${slug}`}
         />
+        <link rel="alternate" hrefLang="ar" href={`https://puremarketingsa.com/ar/services/${slug}`} />
+        <link rel="alternate" hrefLang="en" href={`https://puremarketingsa.com/en/services/${slug}`} />
+        <link rel="alternate" hrefLang="x-default" href={`https://puremarketingsa.com/ar/services/${slug}`} />
         <html lang={language} dir={isRTL ? "rtl" : "ltr"} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={t(`seo.${serviceKey}.title`)} />
+        <meta property="og:description" content={t(`seo.${serviceKey}.description`)} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://puremarketingsa.com/${language}/services/${slug}`} />
+        <meta property="og:image" content="https://puremarketingsa.com/og-image.png" />
+        <meta property="og:site_name" content="Pure Marketing" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={t(`seo.${serviceKey}.title`)} />
+        <meta name="twitter:description" content={t(`seo.${serviceKey}.description`)} />
+        <meta name="twitter:image" content="https://puremarketingsa.com/og-image.png" />
       </Helmet>
 
       <Header />

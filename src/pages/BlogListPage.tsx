@@ -31,7 +31,7 @@ const BlogListPage = () => {
       <Helmet>
         <title>{t('blogSection.title')} | Pure Marketing</title>
         <meta name="description" content={t('blogSection.subtitle')} />
-        <link rel="canonical" href={`https://puremarketing.sa/${language}/blog`} />
+        <link rel="canonical" href={`https://puremarketingsa.com/${language}/blog`} />
         <html lang={language} dir={isRTL ? 'rtl' : 'ltr'} />
       </Helmet>
 

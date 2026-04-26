@@ -170,11 +170,10 @@ const Header = () => {
   return (
     <>
       <header
-        className={`rounded-b-sm fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
-          isScrolled
+        className={`rounded-b-sm fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${isScrolled
             ? "bg-background/95 backdrop-blur-md shadow-lg"
             : "bg-background border-b border-border"
-        } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+          } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
         style={{
           boxShadow: isScrolled ? "0 4px 20px -5px rgba(0,0,0,0.15)" : "none",
         }}>
@@ -233,9 +232,8 @@ const Header = () => {
                   ) : (
                     <button
                       onClick={() => handleNavClick(item)}
-                      className={`text-foreground hover:text-primary transition-colors font-medium ${
-                        item.key === "home" && isHomePage ? "text-primary" : ""
-                      }`}>
+                      className={`text-foreground hover:text-primary transition-colors font-medium ${item.key === "home" && isHomePage ? "text-primary" : ""
+                        }`}>
                       {t(`nav.${item.key}`)}
                     </button>
                   )}

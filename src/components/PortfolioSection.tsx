@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { motion,AnimatePresence } from 'framer-motion';
-import { ArrowRight, ArrowLeft,X } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { ArrowRight, ArrowLeft, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ImageCarousel } from '@/pages/ServicePage';
 
@@ -22,44 +22,44 @@ import ads2 from "@/assets/ads-service/ads2.png";
 import ads3 from "@/assets/ads-service/ads3.png";
 import ads4 from "@/assets/ads-service/ads4.png";
 import { useState } from 'react';
-  
+
 const galleries: Record<
   string,
   { id: number; image: string; title: string }[]
 > = {
   socialMedia: [
-    { id: 1, image: smm1, title: "Social Media 1" },
-    { id: 2, image: smm2, title: "Social Media 2" },
-    { id: 3, image: smm3, title: "Social Media 3" },
-    { id: 4, image: smm4, title: "Social Media 4" },
-    { id: 5, image: smm5, title: "Social Media 5" },
+    { id: 1, image: smm1, title: "إدارة منصات التواصل الاجتماعي - بيور ماركتنج" },
+    { id: 2, image: smm2, title: "صناعة محتوى إبداعي للسوشيال ميديا" },
+    { id: 3, image: smm3, title: "زيادة التفاعل على حسابات التواصل" },
+    { id: 4, image: smm4, title: "إدارة حسابات انستقرام وسناب شات" },
+    { id: 5, image: smm5, title: "بناء الهوية الرقمية للبراندات" },
   ],
   paidAdsCampaigns: [
-    { id: 1, image: ads1, title: "Ads Campaign 1" },
-    { id: 2, image: ads2, title: "Ads Campaign 2" },
-    { id: 3, image: ads3, title: "Ads Campaign 3" },
-    { id: 4, image: ads4, title: "Ads Campaign 4" },
+    { id: 1, image: ads1, title: "إدارة حملات إعلانية ممولة ناجحة" },
+    { id: 2, image: ads2, title: "إعلانات سناب شات وتيك توك" },
+    { id: 3, image: ads3, title: "تحسين عائد الاستثمار الإعلاني ROAS" },
+    { id: 4, image: ads4, title: "استهداف العملاء في السوق السعودي" },
   ],
 };
 
 const PortfolioSection = () => {
   const { t } = useTranslation();
   const { language, isRTL } = useLanguage();
- const [lightboxOpen, setLightboxOpen] = useState(false);
- const [lightboxImage, setLightboxImage] = useState<string | null>(null);
-    const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null);
+  const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
 
- const openLightbox = (src: string) => {
-   setLightboxImage(src);
-   setLightboxOpen(true);
-   document.body.style.overflow = "hidden";
- };
+  const openLightbox = (src: string) => {
+    setLightboxImage(src);
+    setLightboxOpen(true);
+    document.body.style.overflow = "hidden";
+  };
 
- const closeLightbox = () => {
-   setLightboxOpen(false);
-   setLightboxImage(null);
-   document.body.style.overflow = "auto";
- };
+  const closeLightbox = () => {
+    setLightboxOpen(false);
+    setLightboxImage(null);
+    document.body.style.overflow = "auto";
+  };
   return (
     <section
       id="portfolio"

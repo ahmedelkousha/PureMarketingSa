@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 
 const TestimonialsSection = () => {
   const { t } = useTranslation();
-  const { language, isRTL } = useLanguage();
+  const { isRTL } = useLanguage();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 

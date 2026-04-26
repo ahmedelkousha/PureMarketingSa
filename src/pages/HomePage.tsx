@@ -1,23 +1,25 @@
-import { useEffect } from 'react';
+import { useEffect, Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
-import Footer from '@/components/Footer';
 import HeroSection from '@/components/HeroSection';
-import StatsSection from '@/components/StatsSection';
-import PartnersCarousel from '@/components/PartnersCarousel';
-import CaseStudySection from '@/components/CaseStudySection';
-import ServicesSection from '@/components/ServicesSection';
-import AboutSection from '@/components/AboutSection';
-import PortfolioSection from '@/components/PortfolioSection';
-import WhyUsSection from '@/components/WhyUsSection';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import BlogSection from '@/components/BlogSection';
-import ContactSection from '@/components/ContactSection';
-import WhatsAppButton from '@/components/WhatsAppButton';
-import ScrollToTopButton from '@/components/ScrollToTopButton';
+
+// Lazy load below-the-fold components
+const StatsSection = lazy(() => import('@/components/StatsSection'));
+const PartnersCarousel = lazy(() => import('@/components/PartnersCarousel'));
+const CaseStudySection = lazy(() => import('@/components/CaseStudySection'));
+const ServicesSection = lazy(() => import('@/components/ServicesSection'));
+const AboutSection = lazy(() => import('@/components/AboutSection'));
+const PortfolioSection = lazy(() => import('@/components/PortfolioSection'));
+const WhyUsSection = lazy(() => import('@/components/WhyUsSection'));
+const TestimonialsSection = lazy(() => import('@/components/TestimonialsSection'));
+const ContactSection = lazy(() => import('@/components/ContactSection'));
+const BlogSection = lazy(() => import('@/components/BlogSection'));
+const Footer = lazy(() => import('@/components/Footer'));
+const WhatsAppButton = lazy(() => import('@/components/WhatsAppButton'));
+const ScrollToTopButton = lazy(() => import('@/components/ScrollToTopButton'));
 
 const HomePage = () => {
   const { t } = useTranslation();
@@ -48,15 +50,19 @@ const HomePage = () => {
       <Helmet>
         <title>{t('seo.home.title')}</title>
         <meta name="description" content={t('seo.home.description')} />
-        <link rel="canonical" href={`https://puremarketing.sa/${language}`} />
+        <link rel="canonical" href={`https://puremarketingsa.com/${language}`} />
+        <link rel="alternate" hrefLang="ar" href="https://puremarketingsa.com/ar" />
+        <link rel="alternate" hrefLang="en" href="https://puremarketingsa.com/en" />
+        <link rel="alternate" hrefLang="x-default" href="https://puremarketingsa.com/ar" />
         <html lang={language} dir={isRTL ? 'rtl' : 'ltr'} />
         
         {/* Open Graph */}
         <meta property="og:title" content={t('seo.home.title')} />
         <meta property="og:description" content={t('seo.home.description')} />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content={`https://puremarketing.sa/${language}`} />
-        <meta property="og:locale" content={language === 'ar' ? 'ar_SA' : 'en_US'} />
+        <meta property="og:url" content={`https://puremarketingsa.com/${language}`} />
+        <meta property="og:image" content="https://puremarketingsa.com/og-image.png" />
+        <meta property="og:site_name" content="Pure Marketing" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
@@ -68,21 +74,25 @@ const HomePage = () => {
       
       <main className="pt-20">
         <HeroSection /> 
-        <StatsSection />
-        <PartnersCarousel />
-        <CaseStudySection />
-        <ServicesSection />
-        <AboutSection />
-        <PortfolioSection />
-        <WhyUsSection />
-        <TestimonialsSection />
-        <ContactSection />
-        <BlogSection />
+        <Suspense fallback={null}>
+          <StatsSection />
+          <PartnersCarousel />
+          <CaseStudySection />
+          <ServicesSection />
+          <AboutSection />
+          <PortfolioSection />
+          <WhyUsSection />
+          <TestimonialsSection />
+          <ContactSection />
+          <BlogSection />
+        </Suspense>
       </main>
 
-      <Footer />
-      <WhatsAppButton />
-      <ScrollToTopButton />
+      <Suspense fallback={null}>
+        <Footer />
+        <WhatsAppButton />
+        <ScrollToTopButton />
+      </Suspense>
     </>
   );
 };

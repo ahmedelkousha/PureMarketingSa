@@ -1,4 +1,4 @@
-import { MessageCircle } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { motion } from "framer-motion";
 
 const WhatsAppButton = () => {
@@ -13,7 +13,7 @@ const WhatsAppButton = () => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 20 }}>
-      <MessageCircle className="w-6 h-6" />
+      <SiWhatsapp className="w-6 h-6" />
     </motion.a>
   );
 };

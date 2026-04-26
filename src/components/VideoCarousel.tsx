@@ -1,12 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowRight,
-  ArrowLeft,
-  CheckCircle,
-  MessageCircle,
-  Phone,
-  ZoomIn,
   X,
   Play,
 } from "lucide-react";

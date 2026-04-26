@@ -2,8 +2,8 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Helmet } from "react-helmet-async";
-import { motion, AnimatePresence } from "framer-motion";
-import { X, ZoomIn } from "lucide-react";
+import { motion } from "framer-motion";
+import { ZoomIn } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
@@ -41,25 +41,25 @@ import ecommerce4 from "@/assets/website-ecommerce/ecommerce4.png";
 // Gallery data
 // ---------------------------------------------------------------------------
 const socialMediaGallery = [
-  { id: 1, image: smm1, title: "Social Media Campaign 1" },
-  { id: 2, image: smm2, title: "Social Media Campaign 2" },
-  { id: 3, image: smm3, title: "Social Media Campaign 3" },
-  { id: 4, image: smm4, title: "Social Media Campaign 4" },
-  { id: 5, image: smm5, title: "Social Media Campaign 5" },
+  { id: 1, image: smm1, title: "إدارة منصات التواصل الاجتماعي - بيور ماركتنج" },
+  { id: 2, image: smm2, title: "صناعة محتوى إبداعي للسوشيال ميديا" },
+  { id: 3, image: smm3, title: "زيادة التفاعل على حسابات التواصل" },
+  { id: 4, image: smm4, title: "إدارة حسابات انستقرام وسناب شات" },
+  { id: 5, image: smm5, title: "بناء الهوية الرقمية للبراندات" },
 ];
 
 const adsGallery = [
-  { id: 1, image: ads1, title: "Ads Campaign 1" },
-  { id: 2, image: ads2, title: "Ads Campaign 2" },
-  { id: 3, image: ads3, title: "Ads Campaign 3" },
-  { id: 4, image: ads4, title: "Ads Campaign 4" },
+  { id: 1, image: ads1, title: "إدارة حملات إعلانية ممولة ناجحة" },
+  { id: 2, image: ads2, title: "إعلانات سناب شات وتيك توك" },
+  { id: 3, image: ads3, title: "تحسين عائد الاستثمار الإعلاني ROAS" },
+  { id: 4, image: ads4, title: "استهداف العملاء في السوق السعودي" },
 ];
 
 const ecommerceGallery = [
-  { id: 1, image: ecommerce1, title: "Website 1" },
-  { id: 2, image: ecommerce2, title: "Website 2" },
-  { id: 3, image: ecommerce3, title: "Website 3" },
-  { id: 4, image: ecommerce4, title: "Website 4" },
+  { id: 1, image: ecommerce1, title: "تصميم متاجر إلكترونية احترافية" },
+  { id: 2, image: ecommerce2, title: "بناء مواقع تعريفية للشركات" },
+  { id: 3, image: ecommerce3, title: "تجربة مستخدم UI/UX متطورة" },
+  { id: 4, image: ecommerce4, title: "حلول التجارة الإلكترونية المتكاملة" },
 ];
 
 const motionVideos: VideoItem[] = [
@@ -152,9 +152,26 @@ const PortfolioPage = () => {
         <meta name="description" content={t("portfolio.subtitle")} />
         <link
           rel="canonical"
-          href={`https://puremarketing.sa/${language}/portfolio`}
+          href={`https://puremarketingsa.com/${language}/portfolio`}
         />
+        <link rel="alternate" hrefLang="ar" href="https://puremarketingsa.com/ar/portfolio" />
+        <link rel="alternate" hrefLang="en" href="https://puremarketingsa.com/en/portfolio" />
+        <link rel="alternate" hrefLang="x-default" href="https://puremarketingsa.com/ar/portfolio" />
         <html lang={language} dir={isRTL ? "rtl" : "ltr"} />
+
+        {/* Open Graph */}
+        <meta property="og:title" content={`${t("portfolio.title")} | Pure Marketing`} />
+        <meta property="og:description" content={t("portfolio.subtitle")} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://puremarketingsa.com/${language}/portfolio`} />
+        <meta property="og:image" content="https://puremarketingsa.com/og-image.png" />
+        <meta property="og:site_name" content="Pure Marketing" />
+
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${t("portfolio.title")} | Pure Marketing`} />
+        <meta name="twitter:description" content={t("portfolio.subtitle")} />
+        <meta name="twitter:image" content="https://puremarketingsa.com/og-image.png" />
       </Helmet>
 
       <Header />

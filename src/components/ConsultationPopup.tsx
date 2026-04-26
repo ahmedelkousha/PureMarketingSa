@@ -35,7 +35,9 @@ const ConsultationPopup = ({ isOpen, onClose }: ConsultationPopupProps) => {
     setIsSubmitting(true);
 
     try {
-      await submitContactForm(formData);
+      const result = await submitContactForm(formData);
+      if (!result.success) throw new Error("Submission failed");
+      
       toast({
         title: t('contact.successTitle'),
         description: t('contact.successMessage'),
@@ -148,7 +150,7 @@ const ConsultationPopup = ({ isOpen, onClose }: ConsultationPopupProps) => {
                   >
                     <option value="">{t('contact.selectService')}</option>
                     {services.map((service) => (
-                      <option key={service.key} value={service.value}>
+                      <option key={service.key} value={t(`services.${service.key}.title`)}>
                         {t(`services.${service.key}.title`)}
                       </option>
                     ))}

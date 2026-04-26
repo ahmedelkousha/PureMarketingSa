@@ -1,8 +1,25 @@
 {
-    "rewrites": [
+  "headers": [
+    {
+      "source": "/(.*)",
+      "has": [
         {
-            "source": "/(.*)",
-            "destination": "/index.html"
+          "type": "host",
+          "value": ".*\\.vercel\\.app"
         }
-    ]
+      ],
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
