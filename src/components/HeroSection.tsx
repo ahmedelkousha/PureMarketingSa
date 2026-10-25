@@ -14,7 +14,7 @@ const HeroSection = () => {
       {/* Background Images */}
       <img
         src={heroDesktop}
-        alt="وكالة تسويق رقمي في السعودية - بيور ماركتنج"
+        alt="شركة تسويق رقمي في السعودية - بيور ماركتنج"
         className="absolute inset-0 w-full h-full object-cover hidden md:block md:object-right 2xl:object-center"
       />
       <img

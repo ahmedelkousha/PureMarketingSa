@@ -8,12 +8,13 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { blogPosts } from '@/data/content';
+import { useBlogs } from '@/hooks/useBlogs';
 
 const BlogSection = () => {
   const { t } = useTranslation();
   const { language, isRTL } = useLanguage();
   const lang = language as 'ar' | 'en';
+  const { blogs } = useBlogs({ publishedOnly: true });
 
   const ArrowIcon = isRTL ? ArrowLeft : ArrowRight;
 
@@ -47,18 +48,18 @@ const BlogSection = () => {
             spaceBetween={24}
             slidesPerView={1}
             navigation
-            loop={blogPosts.length > 2}
+            loop={blogs.length > 2}
             autoplay={{ delay: 5000, disableOnInteraction: false }}
             dir={isRTL ? 'rtl' : 'ltr'}
-            key={isRTL ? 'rtl' : 'ltr'}
+            key={`${isRTL ? 'rtl' : 'ltr'}-${blogs.length}`}
             breakpoints={{
               640: { slidesPerView: 2 },
               1024: { slidesPerView: 3 },
             }}
             className="blog-swiper"
           >
-            {blogPosts.map((post) => (
-              <SwiperSlide key={post.slug}>
+            {blogs.map((post) => (
+              <SwiperSlide key={post.id || post.slug}>
                 <Link
                   to={`/${language}/blog/${post.slug}`}
                   className="group block bg-card rounded-2xl overflow-hidden border border-border hover:shadow-lg transition-shadow duration-300"
@@ -68,6 +69,7 @@ const BlogSection = () => {
                       src={post.image}
                       alt={post.title[lang] || post.title.ar}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-6">
@@ -75,7 +77,7 @@ const BlogSection = () => {
                       <Clock className="w-4 h-4" />
                       <span>{post.readTime} {t('blogSection.minRead')}</span>
                     </div>
-                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors">
+                    <h3 className="text-xl font-bold mb-2 group-hover:text-primary transition-colors line-clamp-2">
                       {post.title[lang] || post.title.ar}
                     </h3>
                     <p className="text-muted-foreground line-clamp-2">

@@ -15,9 +15,11 @@ import {
 } from "@/components/ui/table";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { toast } from "sonner";
-import { LogOut, LayoutDashboard, Calendar, Phone, Mail, User, Briefcase, FileText, Home, Eye, Archive, CheckCircle2, X, Trash2 } from "lucide-react";
+import { LogOut, LayoutDashboard, Calendar, Phone, Mail, User, Briefcase, FileText, Home, Eye, Archive, CheckCircle2, X, Trash2, Inbox, BookOpen } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet-async";
+import { BlogManager } from "@/components/admin/BlogManager";
 
 interface FirebaseContact extends ContactSubmission {
   id: string;
@@ -25,11 +27,10 @@ interface FirebaseContact extends ContactSubmission {
   status?: "active" | "read" | "archived";
 }
 
-import { Helmet } from "react-helmet-async";
-
 const DashboardPage = () => {
   const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const [currentSection, setCurrentSection] = useState<"contacts" | "blogs">("contacts");
   const [contacts, setContacts] = useState<FirebaseContact[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [activeTab, setActiveTab] = useState<"active" | "read" | "archived">("active");
@@ -139,120 +140,162 @@ const DashboardPage = () => {
         </div>
       </header>
 
-      <main className="container mx-auto px-4 mt-8">
-        <Card className="shadow-lg border-primary/10">
-          <CardHeader>
-            <CardTitle className="text-2xl font-serif">{t('admin.dashboard.contactSubmissions')}</CardTitle>
-            <CardDescription>
-              {t('admin.dashboard.description')}
-            </CardDescription>
-            <div className="flex flex-wrap items-center gap-2 sm:gap-4 mt-6 pt-4 border-t border-border/50">
-              <Button 
-                variant={activeTab === 'active' ? 'default' : 'outline'} 
-                onClick={() => setActiveTab('active')} 
-                size="sm">
-                {t('admin.dashboard.tabActive')}
-                <span className="ms-2 bg-background/20 px-2 py-0.5 rounded-full text-xs">
-                  {contacts.filter(c => (c.status || 'active') === 'active').length}
-                </span>
-              </Button>
-              <Button 
-                variant={activeTab === 'read' ? 'default' : 'outline'} 
-                onClick={() => setActiveTab('read')} 
-                size="sm">
-                {t('admin.dashboard.tabRead')}
-                <span className="ms-2 bg-background/20 px-2 py-0.5 rounded-full text-xs">
-                  {contacts.filter(c => c.status === 'read').length}
-                </span>
-              </Button>
-              <Button 
-                variant={activeTab === 'archived' ? 'default' : 'outline'} 
-                onClick={() => setActiveTab('archived')} 
-                size="sm">
-                {t('admin.dashboard.tabArchived')}
-                <span className="ms-2 bg-background/20 px-2 py-0.5 rounded-full text-xs">
-                  {contacts.filter(c => c.status === 'archived').length}
-                </span>
-              </Button>
-            </div>
-          </CardHeader>
-          <CardContent>
-            {isLoading ? (
-              <div className="flex justify-center p-12">
-                <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-primary"></div>
+      {/* Main Section Navigation */}
+      <div className="container mx-auto px-4 mt-8">
+        <div className="flex items-center gap-2 p-1.5 bg-background/80 backdrop-blur-sm border border-border/60 rounded-2xl w-fit shadow-sm">
+          <button
+            onClick={() => setCurrentSection("contacts")}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+              currentSection === "contacts"
+                ? "bg-primary text-primary-foreground shadow-md"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+            }`}
+          >
+            <Inbox className="w-4 h-4" />
+            <span>{t('admin.dashboard.sectionContacts', 'Contact Inquiries')}</span>
+            <span
+              className={`px-2 py-0.5 rounded-full text-xs font-bold ${
+                currentSection === "contacts"
+                  ? "bg-background/20 text-primary-foreground"
+                  : "bg-muted text-muted-foreground"
+              }`}
+            >
+              {contacts.filter((c) => (c.status || "active") === "active").length}
+            </span>
+          </button>
+
+          <button
+            onClick={() => setCurrentSection("blogs")}
+            className={`flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
+              currentSection === "blogs"
+                ? "bg-primary text-primary-foreground shadow-md"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted/50"
+            }`}
+          >
+            <BookOpen className="w-4 h-4" />
+            <span>{t('admin.dashboard.sectionBlogs', 'Blog Management')}</span>
+          </button>
+        </div>
+      </div>
+
+      <main className="container mx-auto px-4 mt-6">
+        {currentSection === "blogs" ? (
+          <BlogManager />
+        ) : (
+          <Card className="shadow-lg border-primary/10">
+            <CardHeader>
+              <CardTitle className="text-2xl font-serif">{t('admin.dashboard.contactSubmissions')}</CardTitle>
+              <CardDescription>
+                {t('admin.dashboard.description')}
+              </CardDescription>
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 mt-6 pt-4 border-t border-border/50">
+                <Button 
+                  variant={activeTab === 'active' ? 'default' : 'outline'} 
+                  onClick={() => setActiveTab('active')} 
+                  size="sm">
+                  {t('admin.dashboard.tabActive')}
+                  <span className="ms-2 bg-background/20 px-2 py-0.5 rounded-full text-xs">
+                    {contacts.filter(c => (c.status || 'active') === 'active').length}
+                  </span>
+                </Button>
+                <Button 
+                  variant={activeTab === 'read' ? 'default' : 'outline'} 
+                  onClick={() => setActiveTab('read')} 
+                  size="sm">
+                  {t('admin.dashboard.tabRead')}
+                  <span className="ms-2 bg-background/20 px-2 py-0.5 rounded-full text-xs">
+                    {contacts.filter(c => c.status === 'read').length}
+                  </span>
+                </Button>
+                <Button 
+                  variant={activeTab === 'archived' ? 'default' : 'outline'} 
+                  onClick={() => setActiveTab('archived')} 
+                  size="sm">
+                  {t('admin.dashboard.tabArchived')}
+                  <span className="ms-2 bg-background/20 px-2 py-0.5 rounded-full text-xs">
+                    {contacts.filter(c => c.status === 'archived').length}
+                  </span>
+                </Button>
               </div>
-            ) : filteredContacts.length === 0 ? (
-              <div className="text-center p-12 text-muted-foreground border-2 border-dashed rounded-lg">
-                {t('admin.dashboard.noContacts')}
-              </div>
-            ) : (
-              <div className="rounded-md border overflow-x-auto">
-                <Table>
-                  <TableHeader className="bg-muted/50">
-                    <TableRow>
-                      <TableHead className="w-[180px]">
-                        <div className="flex items-center gap-2"><Calendar className="w-4 h-4" /> {t('admin.dashboard.tableDate')}</div>
-                      </TableHead>
-                      <TableHead>
-                        <div className="flex items-center gap-2"><User className="w-4 h-4" /> {t('admin.dashboard.tableName')}</div>
-                      </TableHead>
-                      <TableHead>
-                        <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> {t('admin.dashboard.tablePhone')}</div>
-                      </TableHead>
-                      <TableHead>
-                        <div className="flex items-center gap-2"><Mail className="w-4 h-4" /> {t('admin.dashboard.tableMethod')}</div>
-                      </TableHead>
-                      <TableHead>
-                        <div className="flex items-center gap-2"><Briefcase className="w-4 h-4" /> {t('admin.dashboard.tableService')}</div>
-                      </TableHead>
-                      <TableHead className="max-w-[300px]">
-                        <div className="flex items-center gap-2"><FileText className="w-4 h-4" /> {t('admin.dashboard.tableDetails')}</div>
-                      </TableHead>
-                      <TableHead className="w-[100px] text-center">
-                        <div className="flex items-center justify-center gap-2">{t('admin.dashboard.tableActions')}</div>
-                      </TableHead>
-                    </TableRow>
-                  </TableHeader>
-                  <TableBody>
-                    {filteredContacts.map((contact) => (
-                      <TableRow key={contact.id} className="hover:bg-muted/30">
-                        <TableCell className="font-medium whitespace-nowrap">
-                          {formatDate(contact.createdAt)}
-                        </TableCell>
-                        <TableCell className="font-semibold">{contact.name}</TableCell>
-                        <TableCell>{contact.phone}</TableCell>
-                        <TableCell>
-                          <span className="capitalize px-2 py-1 rounded-full text-xs bg-primary/10 text-primary">
-                            {contact.contactMethod}
-                          </span>
-                        </TableCell>
-                        <TableCell>{contact.service}</TableCell>
-                        <TableCell className="max-w-[300px] truncate" title={contact.details}>
-                          {contact.details}
-                        </TableCell>
-                        <TableCell>
-                          <div className="flex items-center justify-center gap-1">
-                            <Button variant="ghost" size="icon" className="w-8 h-8 hover:bg-primary/10 hover:text-primary transition-colors" onClick={() => setSelectedContact(contact)} title={t('admin.dashboard.viewDetails')}>
-                              <Eye className="w-4 h-4" />
-                            </Button>
-                            {(contact.status || 'active') !== 'archived' && (
-                              <Button variant="ghost" size="icon" className="w-8 h-8 hover:bg-orange-500/10 hover:text-orange-500 transition-colors" onClick={() => handleStatusUpdate(contact.id, 'archived')} title={t('admin.dashboard.moveToArchive')}>
-                                <Archive className="w-4 h-4" />
-                              </Button>
-                            )}
-                            <Button variant="ghost" size="icon" className="w-8 h-8 hover:bg-destructive/10 hover:text-destructive transition-colors" onClick={() => handleDeleteContact(contact.id)} title={t('admin.dashboard.delete')}>
-                              <Trash2 className="w-4 h-4" />
-                            </Button>
-                          </div>
-                        </TableCell>
+            </CardHeader>
+            <CardContent>
+              {isLoading ? (
+                <div className="flex justify-center p-12">
+                  <div className="animate-spin rounded-full h-10 w-10 border-t-2 border-b-2 border-primary"></div>
+                </div>
+              ) : filteredContacts.length === 0 ? (
+                <div className="text-center p-12 text-muted-foreground border-2 border-dashed rounded-lg">
+                  {t('admin.dashboard.noContacts')}
+                </div>
+              ) : (
+                <div className="rounded-md border overflow-x-auto">
+                  <Table>
+                    <TableHeader className="bg-muted/50">
+                      <TableRow>
+                        <TableHead className="w-[180px]">
+                          <div className="flex items-center gap-2"><Calendar className="w-4 h-4" /> {t('admin.dashboard.tableDate')}</div>
+                        </TableHead>
+                        <TableHead>
+                          <div className="flex items-center gap-2"><User className="w-4 h-4" /> {t('admin.dashboard.tableName')}</div>
+                        </TableHead>
+                        <TableHead>
+                          <div className="flex items-center gap-2"><Phone className="w-4 h-4" /> {t('admin.dashboard.tablePhone')}</div>
+                        </TableHead>
+                        <TableHead>
+                          <div className="flex items-center gap-2"><Mail className="w-4 h-4" /> {t('admin.dashboard.tableMethod')}</div>
+                        </TableHead>
+                        <TableHead>
+                          <div className="flex items-center gap-2"><Briefcase className="w-4 h-4" /> {t('admin.dashboard.tableService')}</div>
+                        </TableHead>
+                        <TableHead className="max-w-[300px]">
+                          <div className="flex items-center gap-2"><FileText className="w-4 h-4" /> {t('admin.dashboard.tableDetails')}</div>
+                        </TableHead>
+                        <TableHead className="w-[100px] text-center">
+                          <div className="flex items-center justify-center gap-2">{t('admin.dashboard.tableActions')}</div>
+                        </TableHead>
                       </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </div>
-            )}
-          </CardContent>
-        </Card>
+                    </TableHeader>
+                    <TableBody>
+                      {filteredContacts.map((contact) => (
+                        <TableRow key={contact.id} className="hover:bg-muted/30">
+                          <TableCell className="font-medium whitespace-nowrap">
+                            {formatDate(contact.createdAt)}
+                          </TableCell>
+                          <TableCell className="font-semibold">{contact.name}</TableCell>
+                          <TableCell>{contact.phone}</TableCell>
+                          <TableCell>
+                            <span className="capitalize px-2 py-1 rounded-full text-xs bg-primary/10 text-primary">
+                              {contact.contactMethod}
+                            </span>
+                          </TableCell>
+                          <TableCell>{contact.service}</TableCell>
+                          <TableCell className="max-w-[300px] truncate" title={contact.details}>
+                            {contact.details}
+                          </TableCell>
+                          <TableCell>
+                            <div className="flex items-center justify-center gap-1">
+                              <Button variant="ghost" size="icon" className="w-8 h-8 hover:bg-primary/10 hover:text-primary transition-colors" onClick={() => setSelectedContact(contact)} title={t('admin.dashboard.viewDetails')}>
+                                <Eye className="w-4 h-4" />
+                              </Button>
+                              {(contact.status || 'active') !== 'archived' && (
+                                <Button variant="ghost" size="icon" className="w-8 h-8 hover:bg-orange-500/10 hover:text-orange-500 transition-colors" onClick={() => handleStatusUpdate(contact.id, 'archived')} title={t('admin.dashboard.moveToArchive')}>
+                                  <Archive className="w-4 h-4" />
+                                </Button>
+                              )}
+                              <Button variant="ghost" size="icon" className="w-8 h-8 hover:bg-destructive/10 hover:text-destructive transition-colors" onClick={() => handleDeleteContact(contact.id)} title={t('admin.dashboard.delete')}>
+                                <Trash2 className="w-4 h-4" />
+                              </Button>
+                            </div>
+                          </TableCell>
+                        </TableRow>
+                      ))}
+                    </TableBody>
+                  </Table>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        )}
       </main>
 
       {/* Viewer Modal */}

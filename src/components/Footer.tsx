@@ -214,7 +214,7 @@ const Footer = () => {
           <p className="text-white/60 text-sm md:text-base text-center leading-relaxed">
             {t("footer.copyright")}
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 pb-4 opacity-80 hover:opacity-100 transition-opacity">
+          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 pb-4 opacity-100 hover:opacity-80 transition-opacity">
             <img
               src={commerceLogo}
               alt="Ministry of Commerce"

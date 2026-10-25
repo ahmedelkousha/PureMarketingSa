@@ -345,8 +345,8 @@
   },
   "seo": {
     "home": {
-      "title": "Pure Marketing | Digital Marketing Agency in Saudi Arabia",
-      "description": "Pure Marketing is your complete destination for digital dominance. Social media management, paid ads, motion graphics, and e-commerce solutions."
+      "title": "Pure Marketing | Digital Marketing Company in Saudi Arabia",
+      "description": "Pure Marketing is a Saudi company that aims to empower brands through smart strategies and innovative digital solutions."
     },
     "services": {
       "title": "Our Services | Pure Marketing",
@@ -419,7 +419,10 @@
       "cancel": "Cancel",
       "yesDelete": "Yes, Delete",
       "close": "Close",
-      "status": "Status"
+      "status": "Status",
+      "sectionContacts": "Contact Inquiries",
+      "sectionBlogs": "Blog Management",
+      "blogArticles": "Blog Articles"
     }
   }
 }

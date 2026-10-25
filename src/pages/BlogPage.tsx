@@ -1,14 +1,15 @@
-import { useParams, Navigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useParams, Navigate, Link } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { motion } from 'framer-motion';
-import { Calendar, User, ArrowRight, ArrowLeft } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Calendar, User, ArrowRight, ArrowLeft, Clock } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import { Helmet } from 'react-helmet-async';
 import { useScrollToTop } from '@/hooks/useScrollToTop';
 import { getBlogPost } from '@/data/content';
+import { getBlogPostBySlug, BlogPost } from '@/services/blogService';
 import { Button } from '@/components/ui/button';
 import BackButton from '@/components/BackButton';
 
@@ -17,39 +18,127 @@ const BlogPage = () => {
   const { language, isRTL } = useLanguage();
   useScrollToTop();
 
-  const post = getBlogPost(slug || '');
+  const [post, setPost] = useState<BlogPost | null | undefined>(() => {
+    if (!slug) return null;
+    const staticPost = getBlogPost(slug);
+    if (staticPost) {
+      return {
+        ...staticPost,
+        id: `static-${staticPost.slug}`,
+        status: 'published',
+        isStatic: true,
+      };
+    }
+    return undefined; // undefined indicates still fetching from Firebase
+  });
+
+  const [isLoading, setIsLoading] = useState<boolean>(post === undefined);
+
+  useEffect(() => {
+    if (!slug) {
+      setPost(null);
+      setIsLoading(false);
+      return;
+    }
+
+    // Check static first
+    const staticPost = getBlogPost(slug);
+    if (staticPost) {
+      setPost({
+        ...staticPost,
+        id: `static-${staticPost.slug}`,
+        status: 'published',
+        isStatic: true,
+      });
+      setIsLoading(false);
+      return;
+    }
+
+    // Otherwise fetch dynamic from Firestore
+    let isMounted = true;
+    setIsLoading(true);
+
+    getBlogPostBySlug(slug)
+      .then((fetchedPost) => {
+        if (isMounted) {
+          setPost(fetchedPost);
+          setIsLoading(false);
+        }
+      })
+      .catch((err) => {
+        console.error('Error fetching blog post:', err);
+        if (isMounted) {
+          setPost(null);
+          setIsLoading(false);
+        }
+      });
+
+    return () => {
+      isMounted = false;
+    };
+  }, [slug]);
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   if (!post) {
-    return <Navigate to={`/${language}`} replace />;
+    return <Navigate to={`/${language}/blog`} replace />;
   }
 
   const lang = language as 'ar' | 'en';
-  const title = post.title[lang] || post.title.ar;
-  const content = post.content[lang] || post.content.ar;
+  const title = post.title?.[lang] || post.title?.ar || post.title?.en || '';
+  const content = post.content?.[lang] || post.content?.ar || post.content?.en || '';
+  const excerpt = post.excerpt?.[lang] || post.excerpt?.ar || post.excerpt?.en || '';
   const author = lang === 'ar' ? 'فريق بيور ماركتنج' : 'Pure Marketing Team';
 
-  const formatDate = (dateStr: string) => {
-    const date = new Date(dateStr);
-    return date.toLocaleDateString(lang === 'ar' ? 'ar-SA' : 'en-US', {
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-    });
+  const formatDate = (dateStr?: string) => {
+    if (!dateStr) return '';
+    try {
+      const date = new Date(dateStr);
+      return date.toLocaleDateString(lang === 'ar' ? 'ar-SA' : 'en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      });
+    } catch {
+      return dateStr;
+    }
   };
 
-  // Simple markdown-like renderer
+  const formatInline = (text: string): string => {
+    return text
+      .replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em class="italic">$1</em>')
+      .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-primary underline hover:text-primary/80">$1</a>');
+  };
+
+  // Markdown-like renderer
   const renderContent = (text: string) => {
     const blocks = text.split('\n\n');
     return blocks.map((block, i) => {
       const trimmed = block.trim();
       if (!trimmed) return null;
 
-      // Headings
+      // H2 Heading
       if (trimmed.startsWith('## ')) {
         return (
-          <h2 key={i} className="text-2xl font-bold mt-10 mb-4">
+          <h2 key={i} className="text-2xl md:text-3xl font-bold mt-10 mb-4 text-foreground">
             {trimmed.replace('## ', '')}
           </h2>
+        );
+      }
+
+      // H3 Heading
+      if (trimmed.startsWith('### ')) {
+        return (
+          <h3 key={i} className="text-xl md:text-2xl font-bold mt-8 mb-3 text-foreground">
+            {trimmed.replace('### ', '')}
+          </h3>
         );
       }
 
@@ -67,9 +156,24 @@ const BlogPage = () => {
         return <hr key={i} className="my-8 border-border" />;
       }
 
+      // Image
+      const imgMatch = trimmed.match(/^!\[(.*?)\]\((.*?)\)$/);
+      if (imgMatch) {
+        return (
+          <figure key={i} className="my-8 rounded-2xl overflow-hidden border border-border">
+            <img src={imgMatch[2]} alt={imgMatch[1]} className="w-full h-auto object-cover max-h-[500px]" />
+            {imgMatch[1] && (
+              <figcaption className="text-center text-xs text-muted-foreground py-2 bg-muted/30">
+                {imgMatch[1]}
+              </figcaption>
+            )}
+          </figure>
+        );
+      }
+
       // List items
       if (trimmed.startsWith('- ') || trimmed.startsWith('1. ')) {
-        const items = trimmed.split('\n').filter(l => l.trim());
+        const items = trimmed.split('\n').filter((l) => l.trim());
         return (
           <ul key={i} className="space-y-2 my-4">
             {items.map((item, j) => (
@@ -84,23 +188,20 @@ const BlogPage = () => {
 
       // Paragraph
       return (
-        <p key={i} className="text-muted-foreground leading-relaxed mb-4"
-           dangerouslySetInnerHTML={{ __html: formatInline(trimmed) }} />
+        <p
+          key={i}
+          className="text-muted-foreground leading-relaxed mb-4 text-base md:text-lg"
+          dangerouslySetInnerHTML={{ __html: formatInline(trimmed) }}
+        />
       );
     });
   };
-
-  const formatInline = (text: string): string => {
-    return text
-      .replace(/\*\*(.+?)\*\*/g, '<strong class="text-foreground font-semibold">$1</strong>');
-  };
-
 
   return (
     <>
       <Helmet>
         <title>{title} | Pure Marketing</title>
-        <meta name="description" content={post.excerpt[lang] || post.excerpt.ar} />
+        <meta name="description" content={excerpt} />
         <link rel="canonical" href={`https://puremarketingsa.com/${language}/blog/${slug}`} />
         <link rel="alternate" hrefLang="ar" href={`https://puremarketingsa.com/ar/blog/${slug}`} />
         <link rel="alternate" hrefLang="en" href={`https://puremarketingsa.com/en/blog/${slug}`} />
@@ -109,17 +210,17 @@ const BlogPage = () => {
 
         {/* Open Graph */}
         <meta property="og:title" content={`${title} | Pure Marketing`} />
-        <meta property="og:description" content={post.excerpt[lang] || post.excerpt.ar} />
+        <meta property="og:description" content={excerpt} />
         <meta property="og:type" content="article" />
         <meta property="og:url" content={`https://puremarketingsa.com/${language}/blog/${slug}`} />
-        <meta property="og:image" content="https://puremarketingsa.com/og-image.png" />
+        <meta property="og:image" content={post.image || 'https://puremarketingsa.com/og-image.png'} />
         <meta property="og:site_name" content="Pure Marketing" />
 
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${title} | Pure Marketing`} />
-        <meta name="twitter:description" content={post.excerpt[lang] || post.excerpt.ar} />
-        <meta name="twitter:image" content="https://puremarketingsa.com/og-image.png" />
+        <meta name="twitter:description" content={excerpt} />
+        <meta name="twitter:image" content={post.image || 'https://puremarketingsa.com/og-image.png'} />
       </Helmet>
 
       <Header />
