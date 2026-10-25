@@ -235,10 +235,22 @@ export const BlogManager = () => {
                   : "Create, edit, and manage dynamic Firebase blog posts alongside existing static blogs"}
               </CardDescription>
             </div>
-            <Button onClick={handleOpenCreate} className="gap-2 shrink-0 shadow-md">
-              <Plus className="w-4 h-4" />
-              {isArabic ? "إضافة مقال جديد" : "New Blog Post"}
-            </Button>
+            <div className="flex items-center gap-2">
+              <a
+                href="/sitemap.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-2 text-xs font-medium rounded-lg border border-border hover:bg-muted text-muted-foreground hover:text-foreground transition-colors"
+                title={isArabic ? "معاينة خريطة الموقع XML" : "View Live XML Sitemap"}
+              >
+                <ExternalLink className="w-3.5 h-3.5" />
+                <span>{isArabic ? "خريطة الموقع (Sitemap)" : "Sitemap.xml"}</span>
+              </a>
+              <Button onClick={handleOpenCreate} className="gap-2 shrink-0 shadow-md">
+                <Plus className="w-4 h-4" />
+                {isArabic ? "إضافة مقال جديد" : "New Blog Post"}
+              </Button>
+            </div>
           </div>
 
           {/* Search & Filter Bar */}
@@ -495,20 +507,21 @@ export const BlogManager = () => {
       {/* Delete Confirmation Modal */}
       <AnimatePresence>
         {postToDelete && (
-          <>
+          <div className="fixed inset-0 z-[130] flex items-center justify-center p-4">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.1 }}
               onClick={() => setPostToDelete(null)}
-              className="fixed inset-0 bg-foreground/60 backdrop-blur-sm z-[130]"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm"
             />
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ type: "spring", damping: 25, stiffness: 300 }}
-              className="fixed top-[50%] left-[50%] !-translate-x-[50%] !-translate-y-[50%] w-[90%] max-w-md bg-background p-6 rounded-2xl z-[131] shadow-2xl flex flex-col text-center border overflow-hidden"
+              initial={{ opacity: 0, scale: 0.95, y: 10 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 10 }}
+              transition={{ duration: 0.1, ease: "easeOut" }}
+              className="relative w-full max-w-md bg-background p-6 rounded-2xl z-[131] shadow-2xl flex flex-col text-center border border-border overflow-hidden"
               dir={isArabic ? "rtl" : "ltr"}
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-destructive"></div>
@@ -537,7 +550,7 @@ export const BlogManager = () => {
                 </Button>
               </div>
             </motion.div>
-          </>
+          </div>
         )}
       </AnimatePresence>
     </div>

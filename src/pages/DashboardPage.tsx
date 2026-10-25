@@ -394,20 +394,21 @@ const DashboardPage = () => {
       {/* Delete Confirmation Modal */}
       <AnimatePresence>
         {contactToDelete && (
-          <>
+          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              transition={{ duration: 0.15 }}
               onClick={() => setContactToDelete(null)}
-              className="fixed inset-0 bg-foreground/60 backdrop-blur-sm z-[110]"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm"
             />
             <motion.div 
-               initial={{ opacity: 0, scale: 0.95 }}
-               animate={{ opacity: 1, scale: 1 }}
-               exit={{ opacity: 0, scale: 0.95 }}
-               transition={{ type: "spring", damping: 25, stiffness: 300 }}
-               className="fixed top-[50%] left-[50%] !-translate-x-[50%] !-translate-y-[50%] w-[90%] max-w-md bg-background p-6 rounded-2xl z-[111] shadow-2xl flex flex-col text-center border overflow-hidden"
+               initial={{ opacity: 0, scale: 0.95, y: 10 }}
+               animate={{ opacity: 1, scale: 1, y: 0 }}
+               exit={{ opacity: 0, scale: 0.95, y: 10 }}
+               transition={{ duration: 0.2, ease: "easeOut" }}
+               className="relative w-full max-w-md bg-background p-6 rounded-2xl z-[111] shadow-2xl flex flex-col text-center border border-border overflow-hidden"
             >
               <div className="absolute top-0 left-0 w-full h-1 bg-destructive"></div>
               <div className="w-16 h-16 bg-destructive/10 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -425,7 +426,7 @@ const DashboardPage = () => {
                  </Button>
               </div>
             </motion.div>
-          </>
+          </div>
         )}
       </AnimatePresence>
     </div>
